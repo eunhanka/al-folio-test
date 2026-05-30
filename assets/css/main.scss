@@ -58,24 +58,35 @@
    headless browser at a 2885px viewport): the shipped `tailwind.css` contains a
    corrupted `.fixed-top` rule —
 
-       .fixed-top { right: calc(var( -  - spacing) * 0); left: calc(...); ... }
+       .fixed-top { top: calc(var( -  - spacing) * 0);
+                    right: calc(...); left: calc(...); ... }
 
    the `--spacing` custom property was mangled into the invalid name
-   `-  - spacing`, so the `right`/`left` insets are invalid and dropped. The
-   fixed navbar then has no `right` inset, shrinks to its content width
-   (~980px), and sits flush-left, which caps its `.container` at ~947px — it can
-   never match the centered 1080px body column no matter what we set on the
-   container. (The footer's `.fixed-bottom` uses literal `right: 0`, so it spans
-   the full width and already centers like the body — hence footer was fine.)
+   `-  - spacing`, so the `top`/`right`/`left` insets are invalid and dropped:
 
-   Fix: re-assert the navbar insets with literal values so the fixed bar spans
-   the full viewport. With the bar full width, make it a block formatting
-   context so its `.container` behaves exactly like the body container — full
-   width, capped at `max-width`, centered with auto margins — and restore the
-   15px gutter al-folio strips from the navbar container so the two match
-   exactly. Unlayered rules win over the layered/corrupted Bootstrap styles.
+   - No `right` inset: the fixed bar shrinks to its content width (~980px) and
+     sits flush-left, capping its `.container` at ~947px, so it could never
+     match the centered 1080px body column.
+   - No `top` inset: `top` falls back to `auto`, so the fixed bar drops to its
+     in-flow position (y=57, just below the body's 57px top padding) instead of
+     pinning to y=0 — landing on top of the page content and hiding the first
+     rows (the eyebrow line and the top of the photo).
+
+   (The footer's `.fixed-bottom` uses literal `0` insets, so it was unaffected —
+   hence the footer always spanned full width and centered correctly.)
+
+   Fix: re-assert all three navbar insets with literal values so the bar pins to
+   the top and spans the full viewport. With the bar full width, make it a block
+   formatting context so its `.container` behaves exactly like the body
+   container — full width, capped at `max-width`, centered with auto margins —
+   and restore the 15px gutter al-folio strips from the navbar container so the
+   two match exactly. With the bar pinned at y=0 and 57px tall, the existing
+   `body.fixed-top-nav { padding-top: 57px }` plus the main column's `mt-5`
+   (3rem) margin start the content at y=105, clearing the bar with ~48px to
+   spare. Unlayered rules win over the layered/corrupted Bootstrap styles.
    ------------------------------------------------------------------------- */
 .navbar.fixed-top {
+  top: 0;
   left: 0;
   right: 0;
 }

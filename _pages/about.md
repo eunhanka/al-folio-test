@@ -7,11 +7,13 @@ nav_order: 1
 ---
 
 <style>
-/* Hide al-folio's default profile header since the hero shows it */
+/* Hide al-folio's default profile block; the hero shows the photo and name */
 .profile { display: none !important; }
 .post .post-header, .post-title, header.post-header { display: none !important; }
-/* Center the hero with a comfortable reading width and side padding */
-#eh-hero, #eh-news { max-width: 1000px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+/* The about content sits in a Bootstrap column that leaves room for the (now hidden) profile.
+   Make that column span the full width so the hero is not pushed to the right. */
+.profile-content { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; }
+#eh-hero, #eh-news { max-width: 1100px; margin-left: auto; margin-right: auto; }
 </style>
 
 {% include eh_hero.liquid %}

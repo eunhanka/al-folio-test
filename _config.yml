@@ -694,3 +694,8 @@ jsonresume:
   - languages
   - interests
   - references
+
+# Custom values used by the eh_hero include
+email: kae@purdue.edu
+github_username: eunhanka
+scholar_url: "https://scholar.google.com/citations?user=6--Tei4AAAAJ&hl=en"

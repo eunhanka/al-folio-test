@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 360" role="img" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <title>Research program map for Eunhan Ka</title>
+  <desc>Network traffic dynamics as the common foundation connecting four pillars: physics-informed AI, network resilience, transportation cybersecurity, and optimization and game theory.</desc>
+  <style>
+    .box { fill: #ffffff; stroke-width: 1; }
+    .t   { font-size: 14px; font-weight: 500; }
+    .ts  { font-size: 12px; }
+    .core   { fill: #E1F5EE; stroke: #0F6E56; }
+    .core-t { fill: #04342C; }
+    .pinn   { fill: #EEEDFE; stroke: #534AB7; } .pinn-t { fill: #26215C; }
+    .res    { fill: #E6F1FB; stroke: #185FA5; } .res-t  { fill: #042C53; }
+    .cyber  { fill: #FAECE7; stroke: #993C1D; } .cyber-t{ fill: #4A1B0C; }
+    .opt    { fill: #FAEEDA; stroke: #854F0B; } .opt-t  { fill: #412402; }
+    .link   { stroke: #0F6E56; stroke-width: 0.5; }
+    .sub    { fill: #5F5E5A; }
+    @media (prefers-color-scheme: dark) {
+      .core { fill: #085041; stroke: #5DCAA5; } .core-t { fill: #E1F5EE; }
+      .pinn { fill: #3C3489; stroke: #AFA9EC; } .pinn-t { fill: #EEEDFE; }
+      .res  { fill: #0C447C; stroke: #85B7EB; } .res-t  { fill: #E6F1FB; }
+      .cyber{ fill: #712B13; stroke: #F0997B; } .cyber-t{ fill: #FAECE7; }
+      .opt  { fill: #633806; stroke: #EF9F27; } .opt-t  { fill: #FAEEDA; }
+      .sub  { fill: #B4B2A9; }
+    }
+  </style>
+
+  <line class="link" x1="210" y1="110" x2="270" y2="86"/>
+  <line class="link" x1="210" y1="125" x2="270" y2="156"/>
+  <line class="link" x1="470" y1="110" x2="410" y2="86"/>
+  <line class="link" x1="470" y1="125" x2="410" y2="156"/>
+
+  <rect class="core" x="250" y="104" width="180" height="48" rx="10"/>
+  <text class="t core-t" x="340" y="126" text-anchor="middle" dominant-baseline="central">Network traffic dynamics</text>
+  <text class="ts sub" x="340" y="142" text-anchor="middle" dominant-baseline="central">common foundation</text>
+
+  <rect class="pinn" x="40" y="54" width="230" height="54" rx="8"/>
+  <text class="t pinn-t" x="155" y="74" text-anchor="middle" dominant-baseline="central">Physics-informed AI</text>
+  <text class="ts pinn-t" x="155" y="92" text-anchor="middle" dominant-baseline="central" opacity="0.8">Modeling and state estimation</text>
+
+  <rect class="res" x="410" y="54" width="230" height="54" rx="8"/>
+  <text class="t res-t" x="525" y="74" text-anchor="middle" dominant-baseline="central">Network resilience</text>
+  <text class="ts res-t" x="525" y="92" text-anchor="middle" dominant-baseline="central" opacity="0.8">Performance and recovery</text>
+
+  <rect class="cyber" x="40" y="158" width="230" height="54" rx="8"/>
+  <text class="t cyber-t" x="155" y="178" text-anchor="middle" dominant-baseline="central">Transportation cybersecurity</text>
+  <text class="ts cyber-t" x="155" y="196" text-anchor="middle" dominant-baseline="central" opacity="0.8">Attack modeling and detection</text>
+
+  <rect class="opt" x="410" y="158" width="230" height="54" rx="8"/>
+  <text class="t opt-t" x="525" y="178" text-anchor="middle" dominant-baseline="central">Optimization &amp; behavior</text>
+  <text class="ts opt-t" x="525" y="196" text-anchor="middle" dominant-baseline="central" opacity="0.8">Routing games and behavior</text>
+
+  <rect class="box" x="250" y="276" width="180" height="44" rx="8" fill="none" stroke="#888780" stroke-width="0.5"/>
+  <text class="t" x="340" y="298" text-anchor="middle" dominant-baseline="central" fill="#5F5E5A">Shared methods</text>
+  <text class="ts sub" x="158" y="250" text-anchor="middle">Physics-informed learning</text>
+  <text class="ts sub" x="522" y="250" text-anchor="middle">Game theory and optimization</text>
+</svg>

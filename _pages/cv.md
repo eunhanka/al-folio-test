@@ -1,12 +1,30 @@
 ---
-layout: cv
+layout: page
 permalink: /cv/
-title: CV
+title: cv
+description: Download the full curriculum vitae as a PDF.
 nav: true
 nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
-cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
+cv_pdf: CV_Eunhan.pdf
 ---
+
+<p>
+  <a href="{{ '/assets/pdf/CV_Eunhan.pdf' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank" rel="noopener">
+    <i class="fa-solid fa-file-pdf"></i> Download CV (PDF)
+  </a>
+</p>
+
+<div style="border: 0.5px solid var(--global-divider-color); border-radius: 8px; overflow: hidden; margin-top: 1rem;">
+  <iframe
+    src="{{ '/assets/pdf/CV_Eunhan.pdf' | relative_url }}"
+    title="Curriculum vitae of Eunhan Ka"
+    width="100%"
+    height="900"
+    style="border: 0; display: block;">
+  </iframe>
+</div>
+
+<noscript>
+  Your browser cannot display the embedded PDF.
+  <a href="{{ '/assets/pdf/CV_Eunhan.pdf' | relative_url }}">Download the CV here</a>.
+</noscript>

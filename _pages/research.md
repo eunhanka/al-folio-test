@@ -18,7 +18,7 @@ optimization, game theory, and behavioral modeling.
 
 ## Physics-informed AI
 
-I integrate traffic-flow theory with deep learning to model network traffic and
+I integrate traffic flow theory with deep learning to model network traffic and
 estimate states at scale, particularly where sensor data is sparse. This
 includes a physics-informed machine learning model built on a generalized
 bathtub formulation for large urban networks, published in Transportation
@@ -34,8 +34,8 @@ Secure Connected and Autonomous Traffic Modeling*.
 I study how disruptions and adversarial manipulation affect network
 performance, reliability, and recovery. My work on the resilience of traffic
 networks to route guidance attacks, published in Transportmetrica B, examines
-the role of driver behaviour heterogeneity in shaping network outcomes. Related
-work models day-to-day traffic dynamics under route-guidance misinformation,
+the role of driver behavior heterogeneity in shaping network outcomes. Related
+work models day-to-day traffic dynamics under route guidance misinformation,
 including trust evolution and its effect on network resilience. A book chapter
 on misdirected guidance and urban traffic network resilience is in press.
 

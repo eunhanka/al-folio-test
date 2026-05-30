@@ -75,6 +75,12 @@ ka2023routinggames:
   year: "2023"
   url: "/publications/"
 
+ka2022lanemanagement:
+  title: "Leveraging Location-Based Data for Assessing the Network-Level Traffic Impact of Lane Management"
+  venue: "J. Transp. Eng. Part A"
+  year: "2022"
+  url: "https://doi.org/10.1061/JTEPBS.0000760"
+
 ka2020ssm:
   title: "Implementing Surrogate Safety Measures in Driving Simulator and Evaluating the Safety Effects of Simulator-Based Training on Risky Driving Behaviors"
   venue: "Journal of Advanced Transportation"

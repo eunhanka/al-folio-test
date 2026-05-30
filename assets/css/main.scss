@@ -50,3 +50,33 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* -------------------------------------------------------------------------
+   Navbar alignment with the body column.
+
+   The body `.container` is a block-level child of `<body>`, so `margin: auto`
+   centers it. The navbar's `.container`, however, is a child of `.navbar`,
+   which is `display: flex` (Bootstrap), so the same auto margins do not center
+   it reliably on very wide screens — the menu ends up flush-left while the body
+   stays centered. (The footer's container is a block child of a block
+   `<footer>`, so it centers like the body and needs no fix.)
+
+   Make the navbar's inner container mirror the body container: cap it at the
+   shared content width, drop the (ineffective) auto margins, and center the
+   single flex child via the flex container itself, then restore the 15px gutter
+   that al-folio strips from the navbar container so the menu lines up with the
+   body text. These rules are unlayered, so they win over Bootstrap's layered
+   navbar rules. On narrow screens the container is full-width, so centering is
+   a no-op and the mobile layout is unaffected.
+   ------------------------------------------------------------------------- */
+.navbar {
+  justify-content: center;
+}
+
+.navbar > .container {
+  max-width: var(--max-content-width);
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+}

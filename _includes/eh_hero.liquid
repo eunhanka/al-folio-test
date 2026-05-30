@@ -22,17 +22,19 @@
   #eh-hero .eh-intro {
     min-width: 0;
   }
-  #eh-hero .eh-eyebrow {
-    font-size: 0.95rem;
-    color: var(--global-text-color-light);
-    margin: 0 0 0.4rem;
-  }
   #eh-hero .eh-name {
-    font-size: 2.6rem;
-    font-weight: 600;
+    font-size: 2.8rem;
+    font-weight: 700;
     line-height: 1.1;
-    margin: 0 0 0.7rem;
+    margin: 0 0 0.25rem;
     color: var(--global-text-color);
+  }
+  #eh-hero .eh-title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--global-text-color-light);
+    margin: 0 0 0.9rem;
   }
   #eh-hero .eh-rule {
     width: 40px;
@@ -90,6 +92,56 @@
     line-height: 1.7;
     color: var(--global-text-color);
     margin: 0 0 1rem;
+  }
+  #eh-hero .eh-education {
+    margin: 1.8rem 0 0;
+  }
+  #eh-hero .eh-section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    margin: 0 0 0.8rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--global-theme-color);
+    display: inline-block;
+  }
+  #eh-hero .eh-edu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #eh-hero .eh-edu-item {
+    padding: 0 0 0 0.9rem;
+    border-left: 2px solid var(--global-divider-color);
+    margin: 0 0 0.9rem;
+  }
+  #eh-hero .eh-edu-item:last-child {
+    margin-bottom: 0;
+  }
+  #eh-hero .eh-edu-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.6rem;
+  }
+  #eh-hero .eh-edu-degree {
+    font-weight: 600;
+    color: var(--global-theme-color);
+  }
+  #eh-hero .eh-edu-where {
+    color: var(--global-text-color);
+  }
+  #eh-hero .eh-edu-date {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    white-space: nowrap;
+  }
+  #eh-hero .eh-edu-note {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+    margin: 0.25rem 0 0;
   }
   #eh-hero .eh-foundation {
     display: flex;
@@ -217,8 +269,8 @@
   <div class="eh-top">
     <img class="eh-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Portrait of Eunhan Ka" width="180" height="232" loading="eager">
     <div class="eh-intro">
-      <p class="eh-eyebrow">Postdoctoral researcher · Purdue University</p>
       <h1 class="eh-name">Eunhan Ka</h1>
+      <p class="eh-title">Postdoctoral Researcher · Purdue University</p>
       <div class="eh-rule"></div>
       <p class="eh-summary">
         I develop physics-informed and data-driven methods to model, estimate, and secure traffic dynamics across large-scale transportation networks.
@@ -254,6 +306,24 @@
     </p>
     <p>Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering from Seoul National University.</p>
   </div>
+
+  <section class="eh-education" aria-label="Education">
+    <h2 class="eh-section-title">Education</h2>
+    <ul class="eh-edu-list">
+      {%- for e in site.data.research.education -%}
+        <li class="eh-edu-item">
+          <div class="eh-edu-head">
+            <span class="eh-edu-degree">{{ e.degree }}</span>
+            <span class="eh-edu-where">{{ e.field }}, {{ e.institution }}</span>
+            <span class="eh-edu-date">{{ e.date }}</span>
+          </div>
+          {%- if e.note %}
+            <p class="eh-edu-note">{{ e.note }}</p>
+          {% endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </section>
 
   <div class="eh-foundation">
     <span class="eh-foundation-label">Common foundation</span>

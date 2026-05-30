@@ -4,13 +4,28 @@
 
 common_foundation: "Network traffic dynamics"
 
+education:
+  - degree: "Ph.D."
+    field: "Lyles School of Civil and Construction Engineering"
+    institution: "Purdue University"
+    date: "Dec. 2025"
+    note: "Dissertation: Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling"
+  - degree: "M.S."
+    field: "Department of Civil and Environmental Engineering"
+    institution: "Seoul National University"
+    date: "Feb. 2018"
+  - degree: "B.S."
+    field: "Department of Civil and Environmental Engineering"
+    institution: "Seoul National University"
+    date: "Feb. 2016"
+
 vision: >
   My research program builds toward resilient and trustworthy mobility systems
   that remain reliable under disruption, adversarial manipulation, and uncertainty.
 
 pillars:
   - id: pinn
-    name: "Physics-informed AI"
+    name: "Physics-Informed AI"
     icon: "ti-wave-sine"
     blurb: "Traffic-flow theory fused with deep learning for network-scale modeling and state estimation."
     papers:
@@ -19,7 +34,7 @@ pillars:
       - ka_adaptive_underreview
 
   - id: resilience
-    name: "Network resilience"
+    name: "Network Resilience"
     icon: "ti-heartbeat"
     blurb: "How disruptions and attacks affect network performance, reliability, and recovery."
     papers:
@@ -27,7 +42,7 @@ pillars:
       - ka_d2d_underreview
 
   - id: cybersecurity
-    name: "Transportation cybersecurity"
+    name: "Transportation Cybersecurity"
     icon: "ti-lock"
     blurb: "Modeling and detecting route guidance and V2X attacks on connected mobility."
     papers:
@@ -36,9 +51,11 @@ pillars:
       - ka2026mirage
 
   - id: optimization
-    name: "Optimization & human behavior"
+    name: "Optimization & Human Behavior"
     icon: "ti-route"
     blurb: "Traffic assignment, routing games, and driver behavior in mobility systems."
     papers:
       - ka2022lanemanagement
       - ka2023routinggames
+      - ka2020ssm
+      - lee2018rain

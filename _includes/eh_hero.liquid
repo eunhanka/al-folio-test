@@ -3,35 +3,36 @@
 {%- endcomment -%}
 
 <style>
-#eh-hero { margin: 0 0 2rem; }
-#eh-hero .eh-top { display: flex; align-items: flex-start; gap: 1.6rem; }
-#eh-hero .eh-photo { flex-shrink: 0; width: 160px; height: auto; border-radius: 12px; border: 0.5px solid var(--global-divider-color); object-fit: cover; }
+#eh-hero { margin: 0 0 1.5rem; }
+#eh-hero .eh-top { display: flex; align-items: flex-start; gap: 1.8rem; }
+#eh-hero .eh-photo { flex-shrink: 0; width: 180px; height: auto; border-radius: 12px; border: 0.5px solid var(--global-divider-color); object-fit: cover; }
 #eh-hero .eh-intro { min-width: 0; }
-#eh-hero .eh-eyebrow { font-size: 0.8rem; color: var(--global-text-color-light); margin: 0 0 0.4rem; }
-#eh-hero .eh-name { font-size: 2rem; font-weight: 500; line-height: 1.1; margin: 0 0 0.6rem; color: var(--global-text-color); }
-#eh-hero .eh-rule { width: 34px; height: 3px; background: var(--global-theme-color); border-radius: 2px; margin: 0 0 0.9rem; }
-#eh-hero .eh-summary { font-size: 1rem; line-height: 1.6; max-width: 42rem; color: var(--global-text-color); margin: 0 0 0.7rem; }
-#eh-hero .eh-vision { font-size: 0.92rem; line-height: 1.6; max-width: 42rem; color: var(--global-text-color-light); border-left: 2px solid var(--global-theme-color); padding-left: 0.8rem; margin: 0 0 1.1rem; }
-#eh-hero .eh-links, #eh-hero .eh-secondary { display: flex; flex-wrap: wrap; gap: 1.1rem; margin: 0 0 0.4rem; }
-#eh-hero .eh-links a, #eh-hero .eh-secondary a { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; color: var(--global-text-color); text-decoration: none; }
-#eh-hero .eh-links a i, #eh-hero .eh-secondary a i { font-size: 1rem; color: var(--global-theme-color); }
-#eh-hero .eh-links a:hover, #eh-hero .eh-secondary a:hover { color: var(--global-theme-color); }
-#eh-hero .eh-secondary { margin-top: 1rem; padding-top: 0.9rem; border-top: 0.5px solid var(--global-divider-color); }
-#eh-hero .eh-foundation { display: flex; align-items: center; gap: 0.6rem; margin: 1.4rem 0 0.8rem; }
-#eh-hero .eh-foundation-label, #eh-hero .eh-foundation-hint { font-size: 0.78rem; color: var(--global-text-color-light); }
-#eh-hero .eh-foundation-pill { font-size: 0.82rem; font-weight: 500; color: var(--global-text-color); background: var(--global-bg-color); border: 0.5px solid var(--global-divider-color); border-radius: 999px; padding: 0.2rem 0.8rem; }
+#eh-hero .eh-eyebrow { font-size: 0.95rem; color: var(--global-text-color-light); margin: 0 0 0.4rem; }
+#eh-hero .eh-name { font-size: 2.6rem; font-weight: 600; line-height: 1.1; margin: 0 0 0.7rem; color: var(--global-text-color); }
+#eh-hero .eh-rule { width: 40px; height: 3px; background: var(--global-theme-color); border-radius: 2px; margin: 0 0 1rem; }
+#eh-hero .eh-summary { font-size: 1.2rem; line-height: 1.6; max-width: 44rem; color: var(--global-text-color); margin: 0 0 0.8rem; }
+#eh-hero .eh-vision { font-size: 1.05rem; line-height: 1.6; max-width: 44rem; color: var(--global-text-color-light); border-left: 3px solid var(--global-theme-color); padding-left: 0.9rem; margin: 0 0 1.2rem; }
+#eh-hero .eh-links { display: flex; flex-wrap: wrap; gap: 1.3rem; margin: 0; }
+#eh-hero .eh-links a { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 1rem; color: var(--global-text-color); text-decoration: none; }
+#eh-hero .eh-links a i { font-size: 1.15rem; color: var(--global-theme-color); }
+#eh-hero .eh-links a:hover { color: var(--global-theme-color); }
+#eh-hero .eh-bio { margin: 1.6rem 0 0; }
+#eh-hero .eh-bio p { font-size: 1.08rem; line-height: 1.7; color: var(--global-text-color); margin: 0 0 1rem; }
+#eh-hero .eh-foundation { display: flex; align-items: center; gap: 0.6rem; margin: 1.8rem 0 0.9rem; }
+#eh-hero .eh-foundation-label, #eh-hero .eh-foundation-hint { font-size: 0.85rem; color: var(--global-text-color-light); }
+#eh-hero .eh-foundation-pill { font-size: 0.9rem; font-weight: 500; color: var(--global-text-color); background: var(--global-bg-color); border: 0.5px solid var(--global-divider-color); border-radius: 999px; padding: 0.2rem 0.85rem; }
 #eh-hero .eh-foundation-line { flex: 1; height: 0.5px; background: var(--global-divider-color); }
-#eh-hero .eh-focus { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 1.1rem; align-items: start; }
-#eh-hero .eh-pillars { display: flex; flex-direction: column; gap: 0.5rem; }
-#eh-hero .eh-kw { display: flex; align-items: center; gap: 0.65rem; width: 100%; text-align: left; padding: 0.7rem 0.8rem; border: 0.5px solid var(--global-divider-color); border-radius: 8px; background: var(--global-bg-color); color: var(--global-text-color); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
-#eh-hero .eh-kw i { font-size: 1.1rem; color: var(--global-theme-color); flex-shrink: 0; }
-#eh-hero .eh-kw .eh-kt { font-size: 0.86rem; font-weight: 500; }
+#eh-hero .eh-focus { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 1.2rem; align-items: start; }
+#eh-hero .eh-pillars { display: flex; flex-direction: column; gap: 0.55rem; }
+#eh-hero .eh-kw { display: flex; align-items: center; gap: 0.7rem; width: 100%; text-align: left; padding: 0.85rem 0.95rem; border: 0.5px solid var(--global-divider-color); border-radius: 8px; background: var(--global-bg-color); color: var(--global-text-color); cursor: pointer; transition: border-color 0.15s; }
+#eh-hero .eh-kw i { font-size: 1.25rem; color: var(--global-theme-color); flex-shrink: 0; }
+#eh-hero .eh-kw .eh-kt { font-size: 1rem; font-weight: 500; }
 #eh-hero .eh-kw:hover, #eh-hero .eh-kw.active { border-color: var(--global-theme-color); }
-#eh-hero .eh-papers { background: var(--global-card-bg-color, var(--global-bg-color)); border: 0.5px solid var(--global-divider-color); border-radius: 8px; padding: 0.2rem 1rem; min-height: 13rem; }
-#eh-hero .eh-paper { display: block; padding: 0.65rem 0; border-bottom: 0.5px solid var(--global-divider-color); text-decoration: none; }
+#eh-hero .eh-papers { background: var(--global-card-bg-color, var(--global-bg-color)); border: 0.5px solid var(--global-divider-color); border-radius: 8px; padding: 0.3rem 1.1rem; min-height: 14rem; }
+#eh-hero .eh-paper { display: block; padding: 0.75rem 0; border-bottom: 0.5px solid var(--global-divider-color); text-decoration: none; }
 #eh-hero .eh-paper:last-child { border-bottom: 0; }
-#eh-hero .eh-paper .eh-pt { font-size: 0.82rem; line-height: 1.45; margin: 0 0 0.25rem; color: var(--global-text-color); }
-#eh-hero .eh-paper .eh-pv { font-size: 0.76rem; margin: 0; color: var(--global-text-color-light); }
+#eh-hero .eh-paper .eh-pt { font-size: 0.95rem; line-height: 1.45; margin: 0 0 0.3rem; color: var(--global-text-color); }
+#eh-hero .eh-paper .eh-pv { font-size: 0.85rem; margin: 0; color: var(--global-text-color-light); }
 #eh-hero .eh-paper .eh-pv em { font-style: normal; color: var(--global-theme-color); }
 #eh-hero .eh-paper:hover .eh-pt { color: var(--global-theme-color); }
 @media (max-width: 768px) { #eh-hero .eh-focus { grid-template-columns: 1fr; } }
@@ -45,7 +46,7 @@
 
 <div id="eh-hero">
   <div class="eh-top">
-    <img class="eh-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Portrait of Eunhan Ka" width="160" height="206" loading="eager">
+    <img class="eh-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Portrait of Eunhan Ka" width="180" height="232" loading="eager">
     <div class="eh-intro">
       <p class="eh-eyebrow">Postdoctoral researcher · Purdue University</p>
       <h1 class="eh-name">Eunhan Ka</h1>
@@ -58,6 +59,12 @@
         <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
       </div>
     </div>
+  </div>
+
+  <div class="eh-bio">
+    <p>I am a postdoctoral researcher in the Lyles School of Civil and Construction Engineering at Purdue University, where I completed my Ph.D. under the supervision of Dr. Satish V. Ukkusuri. My dissertation, <em>Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling</em>, develops methods at the intersection of traffic-flow theory, machine learning, and behavioral modeling.</p>
+    <p>My work develops physics-informed and data-driven methods to model, estimate, and secure network traffic dynamics in connected and autonomous mobility, with emphasis on network resilience, transportation cybersecurity, and large-scale state estimation. I study how transportation networks behave under disruption and adversarial manipulation, and how reliable estimation and decision support can be maintained under uncertainty.</p>
+    <p>Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering from Seoul National University.</p>
   </div>
 
   <div class="eh-foundation">
@@ -77,12 +84,6 @@
       {%- endfor -%}
     </div>
     <div class="eh-papers" id="eh-papers" aria-live="polite"></div>
-  </div>
-
-  <div class="eh-secondary">
-    <a href="{{ '/research/' | relative_url }}"><i class="ti ti-users"></i>Mentoring</a>
-    <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="ti ti-code"></i>Code &amp; data</a>
-    <a href="{{ '/talks/' | relative_url }}"><i class="ti ti-presentation"></i>Talks</a>
   </div>
 </div>
 

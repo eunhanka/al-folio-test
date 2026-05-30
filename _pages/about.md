@@ -1,27 +1,60 @@
----
-layout: about
+\---
+
+layout: page
+
 title: about
+
 permalink: /
-subtitle: Postdoctoral researcher, Lyles School of Civil and Construction Engineering, Purdue University
+
 nav: true
-nav_order: 1
----
 
-{% include eh_hero.liquid %}
+nav\_order: 1
 
-I am a postdoctoral researcher in the Lyles School of Civil and Construction
-Engineering at Purdue University, where I completed my Ph.D. under the
-supervision of Dr. Satish V. Ukkusuri. My dissertation, *Physics-Informed
-Neural Networks for Secure Connected and Autonomous Traffic Modeling*, develops
-methods at the intersection of traffic-flow theory, machine learning, and
-behavioral modeling.
+\---
 
-My work develops physics-informed and data-driven methods to model, estimate,
-and secure network traffic dynamics in connected and autonomous mobility, with
-emphasis on network resilience, transportation cybersecurity, and large-scale
-state estimation. I study how transportation networks behave under disruption
-and adversarial manipulation, and how reliable estimation and decision support
-can be maintained under uncertainty.
 
-Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering
-from Seoul National University.
+
+{% include eh\_hero.liquid %}
+
+
+
+<style>
+
+\#eh-news { margin: 2.2rem 0 0; }
+
+\#eh-news h2 { font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem; color: var(--global-text-color); }
+
+\#eh-news .eh-news-item { display: flex; gap: 1rem; padding: 0.7rem 0; border-bottom: 0.5px solid var(--global-divider-color); }
+
+\#eh-news .eh-news-item:last-child { border-bottom: 0; }
+
+\#eh-news .eh-news-date { flex-shrink: 0; width: 7.5rem; font-size: 0.9rem; font-weight: 500; color: var(--global-text-color-light); }
+
+\#eh-news .eh-news-body { font-size: 1rem; line-height: 1.55; color: var(--global-text-color); }
+
+\#eh-news .eh-news-body a { color: var(--global-theme-color); }
+
+</style>
+
+
+
+<div id="eh-news">
+
+&#x20; <h2>News</h2>
+
+&#x20; {%- assign sorted\_news = site.news | sort: "date" | reverse -%}
+
+&#x20; {%- for item in sorted\_news limit: 6 -%}
+
+&#x20; <div class="eh-news-item">
+
+&#x20;   <div class="eh-news-date">{{ item.date | date: "%b %-d, %Y" }}</div>
+
+&#x20;   <div class="eh-news-body">{{ item.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+
+&#x20; </div>
+
+&#x20; {%- endfor -%}
+
+</div>
+

@@ -48,7 +48,20 @@
   <!-- Entry bib key -->
   <div id="{{ entry.key }}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
     <!-- Title -->
-    <div class="title">{{ entry.title }}</div>
+    <div class="title">
+      {{- entry.title -}}
+      {%- if entry.honor -%}
+        {%- assign honor_lower = entry.honor | downcase -%}
+        {%- if honor_lower contains 'editor' -%}
+          {%- assign honor_class = 'honor-editor' -%}
+        {%- elsif honor_lower contains 'award' -%}
+          {%- assign honor_class = 'honor-award' -%}
+        {%- else -%}
+          {%- assign honor_class = '' -%}
+        {%- endif -%}
+        <span class="honor-badge {{ honor_class }}">{{ entry.honor }}</span>
+      {%- endif -%}
+    </div>
     <!-- Author -->
     <div class="author">
       {% assign author_array_size = entry.author_array | size %}
@@ -192,11 +205,6 @@
       {{ entry.note | strip }}
     </div>
 
-    {%- if entry.honor %}
-      <div class="periodical">
-        <span class="honor-badge">{{ entry.honor }}</span>
-      </div>
-    {% endif %}
     <!-- Links/Buttons -->
     <div class="links">
       {% if entry.award %}

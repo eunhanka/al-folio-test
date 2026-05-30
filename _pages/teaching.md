@@ -6,35 +6,12 @@ nav: true
 nav_order: 4
 ---
 
-I approach teaching as preparation for research-grade problem solving in
-transportation engineering. My courses connect traffic flow theory, optimization,
-and modern data-driven methods, so that students learn both the physical
-principles of transportation systems and the computational tools to analyze them
-at scale.
+I teach transportation engineering as a bridge between physical theory and
+modern computation, helping students move from formulating models to
+implementing and testing them at scale. I emphasize reproducible, hands-on
+practice and mentoring that prepares students for independent research.
 
-## Teaching philosophy
-
-My teaching is organized around three commitments.
-
-First, I connect theory to computation. Transportation problems are most
-compelling when students can move from a governing principle, such as a
-fundamental diagram or a network equilibrium condition, to a working model they
-can implement and test. When I co-developed the graduate course CE 661 Algorithms
-in Transportation, I built the curriculum around exactly this path from
-formulation to implementation, so that students leave able to build, not only to
-recite.
-
-Second, I treat data and methods as a shared language across the field. My own
-work integrates physics-based models with machine learning, and I bring the same
-integration into the classroom, helping students see when a physical model,
-a data-driven model, or a combination of the two is the right tool.
-
-Third, I design courses to be accessible and reproducible. I have developed
-online course material and structured assignments around clear, repeatable
-workflows, which lowers barriers for students from varied backgrounds and
-reflects how research and practice are actually conducted.
-
-## Teaching experience
+## Teaching Experience
 
 Across two institutions I have contributed to graduate and undergraduate
 teaching as a lecturer and teaching assistant, and in two cases beyond the
@@ -141,7 +118,7 @@ culminated in a poster at the 2025 CERIAS Cybersecurity Symposium, and watching
 them grow into confident, self-directed researchers is among the most rewarding
 parts of my teaching.
 
-## Courses I can teach
+## Courses I Can Teach
 
 I am prepared to teach undergraduate and graduate courses in transportation
 engineering and related computational methods, including:

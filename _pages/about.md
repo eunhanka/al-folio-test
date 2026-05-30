@@ -7,11 +7,13 @@ nav_order: 1
 ---
 
 <style>
-/* Hide al-folio's default about header (title + subtitle) since the hero shows them */
+/* Hide al-folio's default profile header since the hero shows it */
 .profile { display: none !important; }
 .post .post-header, .post-title, header.post-header { display: none !important; }
-/* Let the hero use the full content width */
-.profile-content, .post .post-content { width: 100% !important; max-width: 960px !important; margin-left: auto !important; margin-right: auto !important; }
+/* Make the content area span the full page and center the hero */
+.profile-content, .post, .post .post-content, .container.profile-page, .container { width: 100% !important; max-width: 100% !important; }
+#eh-hero { max-width: 1000px; margin-left: auto; margin-right: auto; }
+#eh-news { max-width: 1000px; margin-left: auto; margin-right: auto; }
 </style>
 
 {% include eh_hero.liquid %}

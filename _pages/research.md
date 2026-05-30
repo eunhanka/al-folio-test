@@ -26,8 +26,8 @@ Research Part C, and a network macroscopic fundamental diagram-informed graph
 learning method for traffic state imputation, published in Transportation
 Research Part B. Ongoing work extends physics-informed neural networks with
 adaptive domain decomposition for estimation under sparse sensing. This
-direction is the basis of my dissertation, *Physics-Informed Neural Networks for
-Secure Connected and Autonomous Traffic Modeling*.
+direction is the basis of my dissertation, _Physics-Informed Neural Networks for
+Secure Connected and Autonomous Traffic Modeling_.
 
 ## Network resilience
 
@@ -61,6 +61,91 @@ connected and autonomous vehicles under congestion. Earlier work modeled driver
 behavior directly, including surrogate safety measures in simulator-based
 training and gap acceptance at roundabouts under varying conditions, both
 published in the Journal of Advanced Transportation.
+
+## Research Funding
+
+<div class="eh-funding">
+  <div class="eh-fund-group">
+    <h3 class="eh-fund-label">Awarded / Participated</h3>
+    <p class="eh-fund-role">Graduate Research Assistant (PI: Dr. Satish V. Ukkusuri); contributed to proposal preparation and project execution.</p>
+    <ul class="eh-fund-list">
+      <li class="eh-fund-item">
+        <span class="eh-fund-title">Attracting and Retaining the Transportation Workforce and At-Risk Targeted Areas</span>
+        <span class="eh-fund-meta">INDOT &middot; $225,000 &middot; 2024&ndash;2026</span>
+      </li>
+      <li class="eh-fund-item">
+        <span class="eh-fund-title">A Multi-Resolution Simulation Platform for Transportation System Security Testing and Evaluation</span>
+        <span class="eh-fund-meta">USDOT University Transportation Center (TraCR) &middot; $340,000 &middot; 2024</span>
+      </li>
+      <li class="eh-fund-item">
+        <span class="eh-fund-title">Training Gap Analysis for INDOT Workforce</span>
+        <span class="eh-fund-meta">INDOT &middot; $213,500 &middot; 2023&ndash;2025</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="eh-fund-group">
+    <h3 class="eh-fund-label">Submitted / In Preparation</h3>
+    <ul class="eh-fund-list">
+      <li class="eh-fund-item">
+        <span class="eh-fund-title">Resilience-Based Prioritization Framework for Cooperative UAV&ndash;UGV Road Maintenance</span>
+        <span class="eh-fund-meta">INDOT &middot; $200,000 &middot; Co-PI &middot; <em>proposal, under review</em></span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="eh-fund-group">
+    <h3 class="eh-fund-label">Research Support</h3>
+    <ul class="eh-fund-list">
+      <li class="eh-fund-item">
+        <span class="eh-fund-title">Google Cloud Research Credits</span>
+        <span class="eh-fund-meta">Google Cloud (computing grant) &middot; 2025</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .eh-funding { margin: 0.5rem 0 0; }
+  .eh-funding .eh-fund-group { margin: 0 0 1.6rem; }
+  .eh-funding .eh-fund-group:last-child { margin-bottom: 0; }
+  .eh-funding .eh-fund-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--global-theme-color);
+    display: inline-block;
+  }
+  .eh-funding .eh-fund-role {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin: 0 0 0.7rem;
+  }
+  .eh-funding .eh-fund-list { list-style: none; padding: 0; margin: 0; }
+  .eh-funding .eh-fund-item {
+    padding: 0 0 0 0.9rem;
+    border-left: 2px solid var(--global-divider-color);
+    margin: 0 0 0.8rem;
+  }
+  .eh-funding .eh-fund-item:last-child { margin-bottom: 0; }
+  .eh-funding .eh-fund-title {
+    display: block;
+    color: var(--global-text-color);
+    line-height: 1.45;
+  }
+  .eh-funding .eh-fund-meta {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.15rem;
+  }
+  .eh-funding .eh-fund-meta em {
+    font-style: italic;
+    color: var(--global-theme-color);
+  }
+</style>
 
 ## Mentoring
 

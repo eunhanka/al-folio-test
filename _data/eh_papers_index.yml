@@ -19,7 +19,7 @@ ka_adaptive_underreview:
   title: "Adaptive Domain Decomposition Physics-Informed Neural Networks for Traffic State Estimation with Sparse Sensor Data"
   venue: "Transportation Research Part C"
   year: "Under review"
-  url: "/publications/"
+  url: "https://doi.org/10.48550/arXiv.2605.08028"
 
 ka2025sampling:
   title: "Comparative Analysis of Sampling Methods in Physics-Informed Neural Networks for Traffic State Estimation in Large-Scale Road Networks"
@@ -34,10 +34,10 @@ ka2026resilience:
   url: "https://doi.org/10.1080/21680566.2026.2674257"
 
 ka_d2d_underreview:
-  title: "Day-to-Day Traffic Dynamics under Route-Guidance Misinformation: Trust Evolution, Behavioral Heterogeneity, and Network Resilience"
+  title: "Day-to-Day Traffic Network Modeling under Route-Guidance Misinformation: Endogenous Trust and Resilience in CAV Environments"
   venue: "IEEE T-ITS"
   year: "Under review"
-  url: "/publications/"
+  url: "https://doi.org/10.48550/arXiv.2605.14204"
 
 ka_misdirected_inpress:
   title: "Misdirected Guidance and Urban Traffic Network Resilience (Book Chapter)"

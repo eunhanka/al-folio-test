@@ -170,3 +170,44 @@
     }
   }
 }
+
+
+// ---------------------------------------------------------------------------
+// Outstanding Paper Award (and similar honours): small orange badge.
+// Rendered from the bib `honor` field via the local _layouts/bib.liquid.
+// ---------------------------------------------------------------------------
+.publications ol.bibliography li .honor-badge {
+  display: inline-block;
+  padding: 0.05rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff;
+  background-color: #e8740c; // orange
+}
+
+
+// ---------------------------------------------------------------------------
+// Publications page: Google Scholar / ORCID profile links under the intro.
+// ---------------------------------------------------------------------------
+.pub-profile-links {
+  margin: 0.25rem 0 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+
+  a {
+    color: var(--global-text-color);
+    font-size: 0.95rem;
+
+    i {
+      color: var(--global-theme-color);
+      margin-right: 0.2rem;
+    }
+
+    &:hover {
+      color: var(--global-theme-color);
+    }
+  }
+}

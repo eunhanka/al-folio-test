@@ -3,45 +3,214 @@
 {%- endcomment -%}
 
 <style>
-#eh-hero { margin: 0 0 1.5rem; }
-#eh-hero .eh-top { display: flex; align-items: flex-start; gap: 1.8rem; }
-#eh-hero .eh-photo { flex-shrink: 0; width: 180px; height: auto; border-radius: 12px; border: 0.5px solid var(--global-divider-color); object-fit: cover; }
-#eh-hero .eh-intro { min-width: 0; }
-#eh-hero .eh-eyebrow { font-size: 0.95rem; color: var(--global-text-color-light); margin: 0 0 0.4rem; }
-#eh-hero .eh-name { font-size: 2.6rem; font-weight: 600; line-height: 1.1; margin: 0 0 0.7rem; color: var(--global-text-color); }
-#eh-hero .eh-rule { width: 40px; height: 3px; background: var(--global-theme-color); border-radius: 2px; margin: 0 0 1rem; }
-#eh-hero .eh-summary { font-size: 1.2rem; line-height: 1.6; max-width: 44rem; color: var(--global-text-color); margin: 0 0 0.8rem; }
-#eh-hero .eh-vision { font-size: 1.05rem; line-height: 1.6; max-width: 44rem; color: var(--global-text-color-light); border-left: 3px solid var(--global-theme-color); padding-left: 0.9rem; margin: 0 0 1.2rem; }
-#eh-hero .eh-links { display: flex; flex-wrap: wrap; gap: 1.3rem; margin: 0; }
-#eh-hero .eh-links a { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 1rem; color: var(--global-text-color); text-decoration: none; }
-#eh-hero .eh-links a i { font-size: 1.15rem; color: var(--global-theme-color); }
-#eh-hero .eh-links a:hover { color: var(--global-theme-color); }
-#eh-hero .eh-bio { margin: 1.6rem 0 0; }
-#eh-hero .eh-bio p { font-size: 1.08rem; line-height: 1.7; color: var(--global-text-color); margin: 0 0 1rem; }
-#eh-hero .eh-foundation { display: flex; align-items: center; gap: 0.6rem; margin: 1.8rem 0 0.9rem; }
-#eh-hero .eh-foundation-label, #eh-hero .eh-foundation-hint { font-size: 0.85rem; color: var(--global-text-color-light); }
-#eh-hero .eh-foundation-pill { font-size: 0.9rem; font-weight: 500; color: var(--global-text-color); background: var(--global-bg-color); border: 0.5px solid var(--global-divider-color); border-radius: 999px; padding: 0.2rem 0.85rem; }
-#eh-hero .eh-foundation-line { flex: 1; height: 0.5px; background: var(--global-divider-color); }
-#eh-hero .eh-focus { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 1.2rem; align-items: start; }
-#eh-hero .eh-pillars { display: flex; flex-direction: column; gap: 0.55rem; }
-#eh-hero .eh-kw { display: flex; align-items: center; gap: 0.7rem; width: 100%; text-align: left; padding: 0.85rem 0.95rem; border: 0.5px solid var(--global-divider-color); border-radius: 8px; background: var(--global-bg-color); color: var(--global-text-color); cursor: pointer; transition: border-color 0.15s; }
-#eh-hero .eh-kw i { font-size: 1.25rem; color: var(--global-theme-color); flex-shrink: 0; }
-#eh-hero .eh-kw .eh-kt { font-size: 1rem; font-weight: 500; }
-#eh-hero .eh-kw:hover, #eh-hero .eh-kw.active { border-color: var(--global-theme-color); }
-#eh-hero .eh-papers { background: var(--global-card-bg-color, var(--global-bg-color)); border: 0.5px solid var(--global-divider-color); border-radius: 8px; padding: 0.3rem 1.1rem; min-height: 14rem; }
-#eh-hero .eh-paper { display: block; padding: 0.75rem 0; border-bottom: 0.5px solid var(--global-divider-color); text-decoration: none; }
-#eh-hero .eh-paper:last-child { border-bottom: 0; }
-#eh-hero .eh-paper .eh-pt { font-size: 0.95rem; line-height: 1.45; margin: 0 0 0.3rem; color: var(--global-text-color); }
-#eh-hero .eh-paper .eh-pv { font-size: 0.85rem; margin: 0; color: var(--global-text-color-light); }
-#eh-hero .eh-paper .eh-pv em { font-style: normal; color: var(--global-theme-color); }
-#eh-hero .eh-paper:hover .eh-pt { color: var(--global-theme-color); }
-@media (max-width: 768px) { #eh-hero .eh-focus { grid-template-columns: 1fr; } }
-@media (max-width: 576px) {
-  #eh-hero .eh-top { flex-direction: column; align-items: center; text-align: center; }
-  #eh-hero .eh-rule { margin-left: auto; margin-right: auto; }
-  #eh-hero .eh-vision { border-left: 0; padding-left: 0; }
-  #eh-hero .eh-links { justify-content: center; }
-}
+  #eh-hero {
+    margin: 0 0 1.5rem;
+  }
+  #eh-hero .eh-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.8rem;
+  }
+  #eh-hero .eh-photo {
+    flex-shrink: 0;
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    border: 0.5px solid var(--global-divider-color);
+    object-fit: cover;
+  }
+  #eh-hero .eh-intro {
+    min-width: 0;
+  }
+  #eh-hero .eh-eyebrow {
+    font-size: 0.95rem;
+    color: var(--global-text-color-light);
+    margin: 0 0 0.4rem;
+  }
+  #eh-hero .eh-name {
+    font-size: 2.6rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 0.7rem;
+    color: var(--global-text-color);
+  }
+  #eh-hero .eh-rule {
+    width: 40px;
+    height: 3px;
+    background: var(--global-theme-color);
+    border-radius: 2px;
+    margin: 0 0 1rem;
+  }
+  #eh-hero .eh-summary {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 44rem;
+    color: var(--global-text-color);
+    margin: 0 0 0.8rem;
+  }
+  #eh-hero .eh-vision {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 44rem;
+    color: var(--global-text-color-light);
+    border-left: 3px solid var(--global-theme-color);
+    padding-left: 0.9rem;
+    margin: 0 0 1.2rem;
+  }
+  #eh-hero .eh-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 0;
+  }
+  #eh-hero .eh-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--global-text-color-light);
+    text-decoration: none;
+    line-height: 1;
+  }
+  #eh-hero .eh-links a i {
+    font-size: 1.5rem;
+    transition: color 0.15s;
+  }
+  #eh-hero .eh-links a:hover {
+    color: var(--global-theme-color);
+  }
+  #eh-hero .eh-links a:hover i {
+    color: var(--global-theme-color);
+  }
+  #eh-hero .eh-bio {
+    margin: 1.6rem 0 0;
+  }
+  #eh-hero .eh-bio p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: var(--global-text-color);
+    margin: 0 0 1rem;
+  }
+  #eh-hero .eh-foundation {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1.8rem 0 0.9rem;
+  }
+  #eh-hero .eh-foundation-label,
+  #eh-hero .eh-foundation-hint {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+  }
+  #eh-hero .eh-foundation-pill {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--global-text-color);
+    background: var(--global-bg-color);
+    border: 0.5px solid var(--global-divider-color);
+    border-radius: 999px;
+    padding: 0.2rem 0.85rem;
+  }
+  #eh-hero .eh-foundation-line {
+    flex: 1;
+    height: 0.5px;
+    background: var(--global-divider-color);
+  }
+  #eh-hero .eh-focus {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 1.2rem;
+    align-items: start;
+  }
+  #eh-hero .eh-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  #eh-hero .eh-kw {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    text-align: left;
+    padding: 0.85rem 0.95rem;
+    border: 0.5px solid var(--global-divider-color);
+    border-radius: 8px;
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  #eh-hero .eh-kw i {
+    font-size: 1.25rem;
+    color: var(--global-theme-color);
+    flex-shrink: 0;
+  }
+  #eh-hero .eh-kw .eh-kt {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  #eh-hero .eh-kw:hover,
+  #eh-hero .eh-kw.active {
+    border-color: var(--global-theme-color);
+  }
+  #eh-hero .eh-papers {
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    border: 0.5px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 0.3rem 1.1rem;
+    min-height: 14rem;
+  }
+  #eh-hero .eh-paper {
+    display: block;
+    padding: 0.75rem 0;
+    border-bottom: 0.5px solid var(--global-divider-color);
+    text-decoration: none;
+  }
+  #eh-hero .eh-paper:last-child {
+    border-bottom: 0;
+  }
+  #eh-hero .eh-paper .eh-pt {
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin: 0 0 0.3rem;
+    color: var(--global-text-color);
+  }
+  #eh-hero .eh-paper .eh-pv {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--global-text-color-light);
+  }
+  #eh-hero .eh-paper .eh-pv em {
+    font-style: normal;
+    color: var(--global-theme-color);
+  }
+  #eh-hero .eh-paper:hover .eh-pt {
+    color: var(--global-theme-color);
+  }
+  @media (max-width: 768px) {
+    #eh-hero .eh-focus {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 576px) {
+    #eh-hero .eh-top {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    #eh-hero .eh-rule {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #eh-hero .eh-vision {
+      border-left: 0;
+      padding-left: 0;
+    }
+    #eh-hero .eh-links {
+      justify-content: center;
+    }
+  }
 </style>
 
 <div id="eh-hero">
@@ -51,19 +220,38 @@
       <p class="eh-eyebrow">Postdoctoral researcher · Purdue University</p>
       <h1 class="eh-name">Eunhan Ka</h1>
       <div class="eh-rule"></div>
-      <p class="eh-summary">I develop physics-informed and data-driven methods to model, estimate, and secure traffic dynamics across large-scale transportation networks.</p>
+      <p class="eh-summary">
+        I develop physics-informed and data-driven methods to model, estimate, and secure traffic dynamics across large-scale transportation networks.
+      </p>
       <p class="eh-vision">{{ site.data.research.vision }}</p>
       <div class="eh-links">
-        <a href="mailto:{{ site.email }}"><i class="ti ti-mail"></i>Email</a>
-        <a href="{{ site.scholar_url }}" target="_blank" rel="noopener"><i class="ti ti-school"></i>Google Scholar</a>
-        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener"><i class="ti ti-brand-github"></i>GitHub</a>
+        <a href="mailto:{{ site.email }}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+        <a href="{{ site.scholar_url }}" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"
+          ><i class="ai ai-google-scholar" aria-hidden="true"></i
+        ></a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"
+          ><i class="fa-brands fa-github" aria-hidden="true"></i
+        ></a>
+        <a href="https://orcid.org/0000-0003-0954-8075" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"
+          ><i class="ai ai-orcid" aria-hidden="true"></i
+        ></a>
       </div>
     </div>
   </div>
 
   <div class="eh-bio">
-    <p>I am a postdoctoral researcher in the Lyles School of Civil and Construction Engineering at Purdue University, where I completed my Ph.D. under the supervision of Dr. Satish V. Ukkusuri. My dissertation, <em>Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling</em>, develops methods at the intersection of traffic flow theory, machine learning, and behavioral modeling.</p>
-    <p>My work develops physics-informed and data-driven methods to model, estimate, and secure network traffic dynamics in connected and autonomous mobility, with emphasis on network resilience, transportation cybersecurity, and large-scale state estimation. I study how transportation networks behave under disruption and adversarial manipulation, and how reliable estimation and decision support can be maintained under uncertainty.</p>
+    <p>
+      I am a postdoctoral researcher in the Lyles School of Civil and Construction Engineering at Purdue University, where I completed my Ph.D. under
+      the supervision of Dr. Satish V. Ukkusuri. My dissertation,
+      <em>Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling</em>, develops methods at the intersection of traffic
+      flow theory, machine learning, and behavioral modeling.
+    </p>
+    <p>
+      My work develops physics-informed and data-driven methods to model, estimate, and secure network traffic dynamics in connected and autonomous
+      mobility, with emphasis on network resilience, transportation cybersecurity, and large-scale state estimation. I study how transportation
+      networks behave under disruption and adversarial manipulation, and how reliable estimation and decision support can be maintained under
+      uncertainty.
+    </p>
     <p>Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering from Seoul National University.</p>
   </div>
 
@@ -77,10 +265,15 @@
   <div class="eh-focus">
     <div class="eh-pillars" role="tablist" aria-label="Research focus areas">
       {%- for p in site.data.research.pillars -%}
-      <button class="eh-kw{% if forloop.first %} active{% endif %}" data-k="{{ p.id }}" role="tab" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-        <i class="ti {{ p.icon }}" aria-hidden="true"></i>
-        <span class="eh-kt">{{ p.name }}</span>
-      </button>
+        <button
+          class="eh-kw{% if forloop.first %} active{% endif %}"
+          data-k="{{ p.id }}"
+          role="tab"
+          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+        >
+          <i class="ti {{ p.icon }}" aria-hidden="true"></i>
+          <span class="eh-kt">{{ p.name }}</span>
+        </button>
       {%- endfor -%}
     </div>
     <div class="eh-papers" id="eh-papers" aria-live="polite"></div>
@@ -88,44 +281,60 @@
 </div>
 
 <script id="eh-research-data" type="application/json">
-{
-  {%- for p in site.data.research.pillars -%}
-  "{{ p.id }}": [
-    {%- assign keys = p.papers -%}
-    {%- for key in keys -%}
-      {%- assign entry = site.data.eh_papers_index[key] -%}
-      {"t": {{ entry.title | jsonify }}, "v": {{ entry.venue | jsonify }}, "y": {{ entry.year | jsonify }}, "url": {{ entry.url | jsonify }}}{%- unless forloop.last -%},{%- endunless -%}
+  {
+    {%- for p in site.data.research.pillars -%}
+    "{{ p.id }}": [
+      {%- assign keys = p.papers -%}
+      {%- for key in keys -%}
+        {%- assign entry = site.data.eh_papers_index[key] -%}
+        {"t": {{ entry.title | jsonify }}, "v": {{ entry.venue | jsonify }}, "y": {{ entry.year | jsonify }}, "url": {{ entry.url | jsonify }}}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]{%- unless forloop.last -%},{%- endunless -%}
     {%- endfor -%}
-  ]{%- unless forloop.last -%},{%- endunless -%}
-  {%- endfor -%}
-}
+  }
 </script>
 
 <script>
-(function () {
-  var dataEl = document.getElementById("eh-research-data");
-  var box = document.getElementById("eh-papers");
-  if (!dataEl || !box) return;
-  var data;
-  try { data = JSON.parse(dataEl.textContent); } catch (e) { return; }
-  var buttons = document.querySelectorAll("#eh-hero .eh-kw");
-  function render(key) {
-    var list = data[key] || [];
-    box.innerHTML = list.map(function (p) {
-      var inner = '<p class="eh-pt">' + p.t + '</p><p class="eh-pv"><em>' + p.v + '</em> &middot; ' + p.y + '</p>';
-      return p.url ? '<a class="eh-paper" href="' + p.url + '">' + inner + '</a>' : '<div class="eh-paper">' + inner + '</div>';
-    }).join("");
-  }
-  function activate(btn) {
-    buttons.forEach(function (b) { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
-    btn.classList.add("active"); btn.setAttribute("aria-selected", "true");
-    render(btn.dataset.k);
-  }
-  buttons.forEach(function (btn) {
-    btn.addEventListener("mouseenter", function () { activate(btn); });
-    btn.addEventListener("focus", function () { activate(btn); });
-    btn.addEventListener("click", function () { activate(btn); });
-  });
-  if (buttons.length) render(buttons[0].dataset.k);
-})();
+  (function () {
+    var dataEl = document.getElementById('eh-research-data');
+    var box = document.getElementById('eh-papers');
+    if (!dataEl || !box) return;
+    var data;
+    try {
+      data = JSON.parse(dataEl.textContent);
+    } catch (e) {
+      return;
+    }
+    var buttons = document.querySelectorAll('#eh-hero .eh-kw');
+    function render(key) {
+      var list = data[key] || [];
+      box.innerHTML = list
+        .map(function (p) {
+          var inner = '<p class="eh-pt">' + p.t + '</p><p class="eh-pv"><em>' + p.v + '</em> &middot; ' + p.y + '</p>';
+          return p.url ? '<a class="eh-paper" href="' + p.url + '">' + inner + '</a>' : '<div class="eh-paper">' + inner + '</div>';
+        })
+        .join('');
+    }
+    function activate(btn) {
+      buttons.forEach(function (b) {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      render(btn.dataset.k);
+    }
+    buttons.forEach(function (btn) {
+      btn.addEventListener('mouseenter', function () {
+        activate(btn);
+      });
+      btn.addEventListener('focus', function () {
+        activate(btn);
+      });
+      btn.addEventListener('click', function () {
+        activate(btn);
+      });
+    });
+    if (buttons.length) render(buttons[0].dataset.k);
+  })();
 </script>

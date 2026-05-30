@@ -12,12 +12,16 @@ nav_order: 1
 .profile { display: none !important; }
 .post .post-header, .post-title, header.post-header { display: none !important; }
 
-/* The about layout caps its main column at site.max_width (930px), which makes
-   the hero feel narrow and off-center. This <style> only loads on the home page,
-   so widen just this page's main container and center the hero within it. No
-   negative margins are used, so text is never clipped on the left. */
-.container.mt-5 { max-width: 1080px; }
-#eh-hero { max-width: 1080px; margin-left: auto; margin-right: auto; }
+/* Home page only: widen the main content column and keep it centered.
+   al-folio centers `.container` via `margin-inline: auto` and caps it at
+   site.max_width (930px). We raise the cap to 1080px and re-assert auto side
+   margins, so the column always stays centered and is never pushed to one side. */
+.container.mt-5 { max-width: 1080px; margin-left: auto; margin-right: auto; }
+
+/* Center the hero inside that column. The `.post` prefix raises specificity
+   above eh_hero.liquid's `#eh-hero { margin: 0 0 1.5rem }`, which loads after
+   this block and would otherwise reset the left/right margins back to 0. */
+.post #eh-hero { max-width: 1080px; margin-left: auto; margin-right: auto; }
 </style>
 
 {% include eh_hero.liquid %}

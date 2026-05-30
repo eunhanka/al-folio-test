@@ -1,10 +1,12 @@
 \---
 
-layout: page
+layout: about
 
 title: about
 
 permalink: /
+
+subtitle: Postdoctoral researcher, Lyles School of Civil and Construction Engineering, Purdue University
 
 nav: true
 

@@ -11,7 +11,7 @@ nav_order: 1
 .profile { display: none !important; }
 .post .post-header, .post-title, header.post-header { display: none !important; }
 /* Let the hero use the full content width */
-.profile-content, .post .post-content { width: 100% !important; max-width: 100% !important; }
+.profile-content, .post .post-content { width: 100% !important; max-width: 960px !important; margin-left: auto !important; margin-right: auto !important; }
 </style>
 
 {% include eh_hero.liquid %}

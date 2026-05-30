@@ -107,7 +107,8 @@
 // Publications page customizations
 //   (2) numbered entries, restarting per section
 //   (3) author's own name: a single plain underline (no bold, no italic)
-//   (4) venue (journal/conference) name: plain body-text colour, no theme tint
+//   (1) venue abbreviation: fully plain text (no badge background/border/radius)
+//   (4) DOI: small inline link on the venue line (button removed in bib.liquid)
 // Selectors mirror al_folio_core's `.publications ol.bibliography li ...` depth
 // so they override the theme on specificity, and are loaded afterwards.
 // ---------------------------------------------------------------------------
@@ -125,8 +126,8 @@
         margin-right: 0.15em;
       }
 
-      // (3) Own name: underline only. Clear the theme's border-bottom rule so
-      //     we do not end up with a double underline.
+      // (3) Own name: underline only — no bold, no italic. Clear the theme's
+      //     border-bottom so we never end up with a double underline.
       .author > em {
         font-style: normal;
         font-weight: 400;
@@ -135,16 +136,45 @@
         color: var(--global-text-color);
       }
 
-      // (4) Venue label: remove the theme-colour badge fill and show the name
-      //     in the normal body text colour.
-      .abbr abbr {
-        background-color: transparent;
-        color: var(--global-text-color) !important;
-        padding: 0;
-        font-weight: 400;
+      // (1) Venue abbreviation badge -> plain inline text. Strip the theme's
+      //     background, full-width sizing, rounded corners, padding and colour.
+      .abbr {
+        abbr,
+        abbr.badge {
+          display: inline;
+          width: auto;
+          margin: 0;
+          padding: 0;
+          background: transparent !important;
+          background-color: transparent !important;
+          border: 0 !important;
+          border-radius: 0 !important;
+          box-shadow: none !important;
+          font-size: inherit;
+          font-weight: 400;
+          color: var(--global-text-color) !important;
 
-        a {
-          color: var(--global-text-color);
+          a {
+            color: var(--global-text-color);
+            border-bottom: 0;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      // (4) Inline DOI link on the venue line: subtle, no button chrome.
+      .periodical a.doi-inline {
+        font-size: 0.85rem;
+        color: var(--global-text-color-light);
+        border-bottom: 0;
+        white-space: nowrap;
+
+        &:hover {
+          color: var(--global-theme-color);
+          text-decoration: underline;
         }
       }
     }

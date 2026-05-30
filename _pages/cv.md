@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /cv/
-title: cv
+title: CV
 description: Download the full curriculum vitae as a PDF.
 nav: true
 nav_order: 5

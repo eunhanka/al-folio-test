@@ -102,3 +102,51 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+// ---------------------------------------------------------------------------
+// Publications page customizations
+//   (2) numbered entries, restarting per section
+//   (3) author's own name: a single plain underline (no bold, no italic)
+//   (4) venue (journal/conference) name: plain body-text colour, no theme tint
+// Selectors mirror al_folio_core's `.publications ol.bibliography li ...` depth
+// so they override the theme on specificity, and are loaded afterwards.
+// ---------------------------------------------------------------------------
+.publications {
+  ol.bibliography {
+    // (2) Numbering. Each section is its own <ol>, so the counter restarts.
+    counter-reset: bib-counter;
+
+    li {
+      counter-increment: bib-counter;
+
+      .title::before {
+        content: counter(bib-counter) ". ";
+        font-weight: 600;
+        margin-right: 0.15em;
+      }
+
+      // (3) Own name: underline only. Clear the theme's border-bottom rule so
+      //     we do not end up with a double underline.
+      .author > em {
+        font-style: normal;
+        font-weight: 400;
+        border-bottom: 0;
+        text-decoration: underline;
+        color: var(--global-text-color);
+      }
+
+      // (4) Venue label: remove the theme-colour badge fill and show the name
+      //     in the normal body text colour.
+      .abbr abbr {
+        background-color: transparent;
+        color: var(--global-text-color) !important;
+        padding: 0;
+        font-weight: 400;
+
+        a {
+          color: var(--global-text-color);
+        }
+      }
+    }
+  }
+}

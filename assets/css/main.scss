@@ -173,18 +173,39 @@
 
 
 // ---------------------------------------------------------------------------
-// Outstanding Paper Award (and similar honours): small orange badge.
-// Rendered from the bib `honor` field via the local _layouts/bib.liquid.
+// Award / selection badges, shown inline at the end of the entry title.
+// Driven by the bib `honor` field via the local _layouts/bib.liquid, which
+// adds a modifier class so each honour gets its own colour. Kept small and
+// distinct from the navy theme accent.
 // ---------------------------------------------------------------------------
-.publications ol.bibliography li .honor-badge {
+.publications ol.bibliography li .title .honor-badge {
   display: inline-block;
-  padding: 0.05rem 0.5rem;
+  margin-left: 0.4em;
+  padding: 0.05em 0.5em;
   border-radius: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  line-height: 1.4;
-  color: #fff;
-  background-color: #e8740c; // orange
+  line-height: 1.5;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  // Outstanding Paper Award -> amber
+  &.honor-award {
+    color: #fff;
+    background-color: #d97706; // amber-600
+  }
+
+  // Editor's Choice -> deep teal / emerald
+  &.honor-editor {
+    color: #fff;
+    background-color: #0f766e; // teal-700
+  }
+
+  // Fallback for any other honour value
+  &:not(.honor-award):not(.honor-editor) {
+    color: #fff;
+    background-color: var(--global-text-color-light);
+  }
 }
 
 
@@ -210,4 +231,25 @@
       color: var(--global-theme-color);
     }
   }
+}
+
+// ---------------------------------------------------------------------------
+// Site accent colour: deep navy / indigo (was purple in light mode, cyan in
+// dark mode). al_folio_core routes every accent — links, navbar active item,
+// emphasis, buttons, hover states — through these two CSS variables, so
+// overriding them here recolours the whole site consistently. Loaded after
+// the gem's _themes.scss, so these win.
+//
+// Light mode uses a deep indigo (#1e3a8a, indigo-800) that stays legible on
+// white and pairs with the navy "EK" favicon. Dark mode uses a lighter indigo
+// (#93a4ff) so links keep enough contrast on the dark background.
+// ---------------------------------------------------------------------------
+:root {
+  --global-theme-color: #1e3a8a; // indigo-800
+  --global-hover-color: #1e3a8a;
+}
+
+html[data-theme="dark"] {
+  --global-theme-color: #93a4ff; // light indigo for dark bg
+  --global-hover-color: #93a4ff;
 }

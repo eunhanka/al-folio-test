@@ -181,11 +181,13 @@
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
     <div class="periodical">
-      {{ periodical | strip -}}
-      {%- if entry.doi %}
-        <a class="doi-inline" href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a>
-      {%- endif %}
+      {{ periodical | strip }}
     </div>
+    {%- if entry.doi %}
+      <div class="periodical doi-line">
+        <a class="doi-inline" href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a>
+      </div>
+    {%- endif %}
     <div class="periodical">
       {{ entry.note | strip }}
     </div>

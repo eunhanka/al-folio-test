@@ -107,8 +107,9 @@
 // Publications page customizations
 //   (2) numbered entries, restarting per section
 //   (3) author's own name: a single plain underline (no bold, no italic)
-//   (1) venue abbreviation: fully plain text (no badge background/border/radius)
-//   (4) DOI: small inline link on the venue line (button removed in bib.liquid)
+//   (1) hide the left venue-abbreviation column; the body column fills its
+//       place so entries span the full width
+//   (4) DOI: subtle link on its own dedicated line, consistent on every entry
 // Selectors mirror al_folio_core's `.publications ol.bibliography li ...` depth
 // so they override the theme on specificity, and are loaded afterwards.
 // ---------------------------------------------------------------------------
@@ -119,6 +120,20 @@
 
     li {
       counter-increment: bib-counter;
+
+      // (1) Remove the left abbr column entirely and let the body column take
+      //     the full row width. The grid is `.abbr` (col-sm-2) + the entry body
+      //     (col-sm-8); hiding the former and forcing the latter to 100% keeps
+      //     the venue's full name in the body while reclaiming the left gutter.
+      .abbr {
+        display: none;
+      }
+
+      > .row > [class*="col-sm-8"],
+      > .row > [class*="col-sm-10"] {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
 
       .title::before {
         content: counter(bib-counter) ". ";
@@ -136,45 +151,20 @@
         color: var(--global-text-color);
       }
 
-      // (1) Venue abbreviation badge -> plain inline text. Strip the theme's
-      //     background, full-width sizing, rounded corners, padding and colour.
-      .abbr {
-        abbr,
-        abbr.badge {
-          display: inline;
-          width: auto;
-          margin: 0;
-          padding: 0;
-          background: transparent !important;
-          background-color: transparent !important;
-          border: 0 !important;
-          border-radius: 0 !important;
-          box-shadow: none !important;
-          font-size: inherit;
-          font-weight: 400;
-          color: var(--global-text-color) !important;
+      // (4) DOI on its own line, immediately under the venue/year line, so the
+      //     position is identical for every entry regardless of venue length.
+      .periodical.doi-line {
+        margin-top: 0.1rem;
 
-          a {
-            color: var(--global-text-color);
-            border-bottom: 0;
+        a.doi-inline {
+          font-size: 0.85rem;
+          color: var(--global-text-color-light);
+          border-bottom: 0;
 
-            &:hover {
-              text-decoration: underline;
-            }
+          &:hover {
+            color: var(--global-theme-color);
+            text-decoration: underline;
           }
-        }
-      }
-
-      // (4) Inline DOI link on the venue line: subtle, no button chrome.
-      .periodical a.doi-inline {
-        font-size: 0.85rem;
-        color: var(--global-text-color-light);
-        border-bottom: 0;
-        white-space: nowrap;
-
-        &:hover {
-          color: var(--global-theme-color);
-          text-decoration: underline;
         }
       }
     }

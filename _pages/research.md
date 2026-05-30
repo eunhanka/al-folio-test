@@ -67,7 +67,7 @@ published in the Journal of Advanced Transportation.
 <div class="eh-funding">
   <div class="eh-fund-group">
     <h3 class="eh-fund-label">Awarded / Participated</h3>
-    <p class="eh-fund-role">Graduate Research Assistant (PI: Dr. Satish V. Ukkusuri); contributed to proposal preparation and project execution.</p>
+    <p class="eh-fund-role">Led full proposal development as Graduate Research Assistant (PI: Dr. Satish V. Ukkusuri), from conceptualization and writing through submission, and contributed to project execution.</p>
     <ul class="eh-fund-list">
       <li class="eh-fund-item">
         <span class="eh-fund-title">Attracting and Retaining the Transportation Workforce and At-Risk Targeted Areas</span>

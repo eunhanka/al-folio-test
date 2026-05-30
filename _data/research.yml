@@ -1,0 +1,48 @@
+# Research pillars for Eunhan Ka's homepage.
+# Each pillar lists the BibTeX keys (from _bibliography/papers.bib) it represents.
+# Editing this file updates both the hero hover panel and the Research page.
+
+common_foundation: "Network traffic dynamics"
+
+vision: >
+  My research program builds toward resilient and trustworthy mobility systems
+  that remain reliable under disruption, adversarial manipulation, and uncertainty.
+
+pillars:
+  - id: pinn
+    name: "Physics-informed AI"
+    icon: "ti-wave-sine"
+    blurb: "Traffic-flow theory fused with deep learning for network-scale modeling and state estimation."
+    papers:
+      - ka2024piml
+      - xue2024nmfd
+      - ka_adaptive_underreview
+      - ka2025sampling
+
+  - id: resilience
+    name: "Network resilience"
+    icon: "ti-heartbeat"
+    blurb: "How disruptions and attacks affect network performance, reliability, and recovery."
+    papers:
+      - ka2026resilience
+      - ka_d2d_underreview
+      - ka_misdirected_inpress
+
+  - id: cybersecurity
+    name: "Transportation cybersecurity"
+    icon: "ti-lock"
+    blurb: "Modeling and detecting route guidance and V2X attacks on connected mobility."
+    papers:
+      - ka2025rga
+      - ka2026mirage
+      - ukkusuri2025cyberreview
+
+  - id: optimization
+    name: "Optimization & human behavior"
+    icon: "ti-route"
+    blurb: "Traffic assignment, routing games, and driver behavior in mobility systems."
+    papers:
+      - ka2025analytical
+      - ka2023routinggames
+      - ka2020ssm
+      - lee2018rain

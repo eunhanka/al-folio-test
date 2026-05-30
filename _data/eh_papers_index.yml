@@ -1,0 +1,88 @@
+# Short display labels for the hero hover panel, keyed by BibTeX citation key.
+# 'url' should point to the DOI when available, otherwise to the Publications page.
+# Titles and venues are shortened for the hover panel; the canonical record
+# lives in _bibliography/papers.bib.
+
+ka2024piml:
+  title: "A Physics-Informed Machine Learning for Estimating Traffic State with a Generalized Bathtub Model in Large-scale Urban Networks"
+  venue: "Transportation Research Part C"
+  year: "2024"
+  url: "https://doi.org/10.1016/j.trc.2024.104661"
+
+xue2024nmfd:
+  title: "Network Macroscopic Fundamental Diagram-Informed Graph Learning for Traffic State Imputation"
+  venue: "Transportation Research Part B"
+  year: "2024"
+  url: "https://doi.org/10.1016/j.trb.2024.102996"
+
+ka_adaptive_underreview:
+  title: "Adaptive Domain Decomposition Physics-Informed Neural Networks for Traffic State Estimation with Sparse Sensor Data"
+  venue: "Transportation Research Part C"
+  year: "Under review"
+  url: "/publications/"
+
+ka2025sampling:
+  title: "Comparative Analysis of Sampling Methods in Physics-Informed Neural Networks for Traffic State Estimation in Large-Scale Road Networks"
+  venue: "TRB Annual Meeting"
+  year: "2025"
+  url: "/publications/"
+
+ka2026resilience:
+  title: "Resilience of Traffic Networks to Route Guidance Attacks: The Role of Driver Behaviour Heterogeneity"
+  venue: "Transportmetrica B"
+  year: "2026"
+  url: "https://doi.org/10.1080/21680566.2026.2674257"
+
+ka_d2d_underreview:
+  title: "Day-to-Day Traffic Dynamics under Route-Guidance Misinformation: Trust Evolution, Behavioral Heterogeneity, and Network Resilience"
+  venue: "IEEE T-ITS"
+  year: "Under review"
+  url: "/publications/"
+
+ka_misdirected_inpress:
+  title: "Misdirected Guidance and Urban Traffic Network Resilience (Book Chapter)"
+  venue: "World Scientific"
+  year: "In press"
+  url: "/publications/"
+
+ka2025rga:
+  title: "Route Guidance Attacks in Cyber Transportation Networks: A User-Centered Study of Behavioral Sensitivity"
+  venue: "Transportation Research Part F"
+  year: "2025"
+  url: "https://doi.org/10.1016/j.trf.2025.103354"
+
+ka2026mirage:
+  title: "MIRAGE: Detecting Fake Emergency Electronic Brake Light Attacks in V2X Networks via Event-Gated Behavioral Analysis"
+  venue: "USENIX VehicleSec"
+  year: "2026"
+  url: "/publications/"
+
+ukkusuri2025cyberreview:
+  title: "Cybersecurity for Next-Generation Road Transportation: A Review"
+  venue: "ACM J. Autonomous Transportation Systems"
+  year: "2025"
+  url: "https://doi.org/10.1145/3744352"
+
+ka2025analytical:
+  title: "Analytical Framework for Network-Level Traffic Flow under Route Guidance Attacks: An Extension of the Generalized Bathtub Model"
+  venue: "TRB Annual Meeting"
+  year: "2025"
+  url: "/publications/"
+
+ka2023routinggames:
+  title: "Dynamic Routing Games for Connected and Autonomous Vehicles with Traffic Congestion: A Mean Field Game Approach"
+  venue: "INFORMS Annual Meeting"
+  year: "2023"
+  url: "/publications/"
+
+ka2020ssm:
+  title: "Implementing Surrogate Safety Measures in Driving Simulator and Evaluating the Safety Effects of Simulator-Based Training on Risky Driving Behaviors"
+  venue: "Journal of Advanced Transportation"
+  year: "2020"
+  url: "https://doi.org/10.1155/2020/7525721"
+
+lee2018rain:
+  title: "Evaluation of the Rain Effects on Gap Acceptance Behavior at Roundabouts by a Logit Model"
+  venue: "Journal of Advanced Transportation"
+  year: "2018"
+  url: "https://doi.org/10.1155/2018/2726732"

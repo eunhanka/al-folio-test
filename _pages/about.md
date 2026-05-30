@@ -1,8 +1,7 @@
 ---
 layout: about
-title: about
+title: " "
 permalink: /
-subtitle: Postdoctoral researcher, Lyles School of Civil and Construction Engineering, Purdue University
 nav: true
 nav_order: 1
 ---

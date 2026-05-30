@@ -253,3 +253,22 @@ html[data-theme="dark"] {
   --global-theme-color: #93a4ff; // light indigo for dark bg
   --global-hover-color: #93a4ff;
 }
+
+// ---------------------------------------------------------------------------
+// Navbar brand: slightly larger site name for presence, balanced with the
+// nav links and the navbar height. The brand uses al-folio's `.title` class
+// (1.2rem); bump it a touch without throwing off vertical alignment.
+// ---------------------------------------------------------------------------
+.navbar .navbar-brand {
+  font-size: 1.45rem;
+}
+
+// ---------------------------------------------------------------------------
+// Teaching page: the structured experience list (.eh-teaching) carries no
+// bottom margin, so the following "Mentoring" heading sat closer to it than
+// the other section headings. Add bottom spacing equal to a normal block so
+// every section heading has consistent breathing room above it.
+// ---------------------------------------------------------------------------
+.eh-teaching {
+  margin-bottom: 1.5rem;
+}

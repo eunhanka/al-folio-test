@@ -145,28 +145,21 @@
   }
   #eh-hero .eh-foundation {
     display: flex;
-    align-items: center;
-    gap: 0.6rem;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
     margin: 1.8rem 0 0.9rem;
   }
-  #eh-hero .eh-foundation-label,
+  #eh-hero .eh-foundation-intro {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--global-text-color);
+    margin: 0;
+  }
   #eh-hero .eh-foundation-hint {
+    flex-shrink: 0;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
-  }
-  #eh-hero .eh-foundation-pill {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--global-text-color);
-    background: var(--global-bg-color);
-    border: 0.5px solid var(--global-divider-color);
-    border-radius: 999px;
-    padding: 0.2rem 0.85rem;
-  }
-  #eh-hero .eh-foundation-line {
-    flex: 1;
-    height: 0.5px;
-    background: var(--global-divider-color);
   }
   #eh-hero .eh-focus {
     display: grid;
@@ -326,9 +319,7 @@
   </section>
 
   <div class="eh-foundation">
-    <span class="eh-foundation-label">Common foundation</span>
-    <span class="eh-foundation-pill">{{ site.data.research.common_foundation }}</span>
-    <span class="eh-foundation-line"></span>
+    <p class="eh-foundation-intro">Four focus areas, built on a shared foundation in {{ site.data.research.common_foundation | downcase }}.</p>
     <span class="eh-foundation-hint">hover a focus area</span>
   </div>
 

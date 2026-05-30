@@ -7,15 +7,10 @@ nav_order: 4
 ---
 
 I approach teaching as preparation for research-grade problem solving in
-transportation engineering. My courses connect traffic-flow theory, optimization,
+transportation engineering. My courses connect traffic flow theory, optimization,
 and modern data-driven methods, so that students learn both the physical
 principles of transportation systems and the computational tools to analyze them
 at scale.
-
-<p style="color: var(--global-text-color-light); font-size: 0.9rem;">
-The statement below is a working draft to be revised in the researcher's own
-voice before submission.
-</p>
 
 ## Teaching philosophy
 

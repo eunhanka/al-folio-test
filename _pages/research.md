@@ -23,8 +23,15 @@ optimization, game theory, and behavioral modeling.
       </div>
       <div class="eh-area-intro">
         <p class="eh-area-desc">{{ p.description | default: p.blurb }}</p>
-        {% include eh_research_figure.liquid id=p.id %}
       </div>
+      <figure class="eh-area-figure">
+        <img
+          class="eh-area-infographic"
+          src="{{ '/assets/img/research/' | append: p.id | append: '.png' | relative_url }}"
+          alt="{{ p.name }} research overview infographic"
+          loading="lazy"
+        >
+      </figure>
       <div class="eh-area-papers">
         {%- for key in p.papers -%}
           {% bibliography --query @*[key={{ key }}] %}
@@ -60,46 +67,33 @@ optimization, game theory, and behavioral modeling.
     margin: 0;
     color: var(--global-text-color);
   }
-  /* Header intro: description text beside the conceptual figure on desktop,
-     stacked on mobile. */
   .eh-areas .eh-area-intro {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
     margin: 0 0 1rem;
   }
   .eh-areas .eh-area-desc {
-    flex: 1 1 auto;
     margin: 0;
     line-height: 1.6;
     color: var(--global-text-color);
   }
-  /* Conceptual figure: theme-aware (navy via color), transparent background,
-     uniform size, never overflowing its column. */
-  .eh-areas .eh-fig {
-    flex: 0 0 auto;
-    width: 320px;
-    max-width: 100%;
-    color: var(--global-theme-color);
+  /* Wide infographic shown as a full-width figure card. The images have white
+     backgrounds, so wrap them in a white, rounded, padded card that reads as
+     an intentional figure in both light and dark mode. Scoped to .eh-areas so
+     it wins over main.scss without !important. */
+  .eh-areas .eh-area-figure {
+    margin: 0 0 1.2rem;
+    background: #fff;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
   }
-  .eh-areas .eh-fig-svg {
+  .eh-areas .eh-area-infographic {
     display: block;
     width: 100%;
+    max-width: 100%;
     height: auto;
-  }
-  .eh-areas .eh-fig .eh-fig-muted {
-    color: var(--global-text-color-light);
-  }
-  @media (max-width: 768px) {
-    .eh-areas .eh-area-intro {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .eh-areas .eh-fig {
-      width: 100%;
-      max-width: 320px;
-      align-self: center;
-    }
+    margin: 0 auto;
+    border-radius: 4px;
   }
 
   /* Papers reuse the publications bib.liquid styling. Each paper is rendered by

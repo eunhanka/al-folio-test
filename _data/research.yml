@@ -38,8 +38,8 @@ pillars:
     icon: "fa-solid fa-circle-nodes"
     blurb: "How disruptions and attacks affect network performance, reliability, and recovery."
     papers:
-      - ka_d2d_underreview
       - ka2026resilience
+      - ka_d2d_underreview
 
   - id: cybersecurity
     name: "Transportation Cybersecurity"

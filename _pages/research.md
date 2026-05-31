@@ -75,16 +75,18 @@ optimization, game theory, and behavioral modeling.
     line-height: 1.6;
     color: var(--global-text-color);
   }
-  /* Wide infographic shown as a full-width figure card. The images have white
-     backgrounds, so wrap them in a white, rounded, padded card that reads as
-     an intentional figure in both light and dark mode. Scoped to .eh-areas so
-     it wins over main.scss without !important. */
+  /* Infographic shown as a centered figure card, capped well below the body
+     width so it reads as a supporting visual rather than dominating the
+     section. The images have white backgrounds, so the white, rounded, padded
+     card keeps them legible in both light and dark mode. Scoped to .eh-areas
+     so it wins over main.scss without !important. */
   .eh-areas .eh-area-figure {
-    margin: 0 0 1.2rem;
+    margin: 0 auto 1.4rem;
+    max-width: 520px;
     background: #fff;
     border: 1px solid var(--global-divider-color);
     border-radius: 10px;
-    padding: 0.75rem;
+    padding: 0.6rem;
     text-align: center;
   }
   .eh-areas .eh-area-infographic {
@@ -94,6 +96,11 @@ optimization, game theory, and behavioral modeling.
     height: auto;
     margin: 0 auto;
     border-radius: 4px;
+  }
+  @media (max-width: 560px) {
+    .eh-areas .eh-area-figure {
+      max-width: 100%;
+    }
   }
 
   /* Papers reuse the publications bib.liquid styling. Each paper is rendered by

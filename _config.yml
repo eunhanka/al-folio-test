@@ -701,3 +701,7 @@ jsonresume:
 email: kae@purdue.edu
 github_username: eunhanka
 scholar_url: "https://scholar.google.com/citations?user=6--Tei4AAAAJ&hl=en"
+# Single source of truth for the CV PDF path (referenced by _pages/cv.md and
+# _includes/eh_hero.liquid via `site.cv_pdf_path | relative_url`). Keep the
+# filename CV_Eunhan.pdf fixed; overwrite that file in place to update the CV.
+cv_pdf_path: /assets/pdf/CV_Eunhan.pdf

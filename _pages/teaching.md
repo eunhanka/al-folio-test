@@ -106,6 +106,15 @@ classroom by building the course itself.
     font-style: italic;
     color: var(--global-theme-color);
   }
+  /* Uniform space above every section heading. Targeted by id (specificity
+     1,0,0) inside this page-local <style>, which is last in the cascade, so it
+     reliably beats the gem's h2 rule and the .eh-teaching margin shorthand
+     that otherwise left "Mentoring" tight against the experience list. */
+  #teaching-experience,
+  #mentoring,
+  #courses-i-can-teach {
+    margin-top: 2.5rem;
+  }
 </style>
 
 ## Mentoring

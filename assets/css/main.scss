@@ -255,12 +255,12 @@ html[data-theme="dark"] {
 }
 
 // ---------------------------------------------------------------------------
-// Navbar brand: slightly larger site name for presence, balanced with the
-// nav links and the navbar height. The brand uses al-folio's `.title` class
-// (1.2rem); bump it a touch without throwing off vertical alignment.
+// Navbar brand: larger site name for clear presence, balanced with the nav
+// links and the navbar height. The brand uses al-folio's `.title` class
+// (1.2rem); this two-class selector (specificity 0,2,0) outranks it.
 // ---------------------------------------------------------------------------
 .navbar .navbar-brand {
-  font-size: 1.45rem;
+  font-size: 1.6rem;
 }
 
 // ---------------------------------------------------------------------------

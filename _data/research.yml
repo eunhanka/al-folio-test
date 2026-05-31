@@ -26,7 +26,7 @@ vision: >
 pillars:
   - id: pinn
     name: "Physics-Informed AI"
-    icon: "ti-wave-sine"
+    icon: "fa-solid fa-brain"
     blurb: "Traffic-flow theory fused with deep learning for network-scale modeling and state estimation."
     papers:
       - ka_adaptive_underreview
@@ -35,7 +35,7 @@ pillars:
 
   - id: resilience
     name: "Network Resilience"
-    icon: "ti-heartbeat"
+    icon: "fa-solid fa-circle-nodes"
     blurb: "How disruptions and attacks affect network performance, reliability, and recovery."
     papers:
       - ka_d2d_underreview
@@ -43,7 +43,7 @@ pillars:
 
   - id: cybersecurity
     name: "Transportation Cybersecurity"
-    icon: "ti-lock"
+    icon: "fa-solid fa-shield-halved"
     blurb: "Modeling and detecting route guidance and V2X attacks on connected mobility."
     papers:
       - ka2026mirage
@@ -52,7 +52,7 @@ pillars:
 
   - id: optimization
     name: "Optimization & Human Behavior"
-    icon: "ti-route"
+    icon: "fa-solid fa-route"
     blurb: "Traffic assignment, routing games, and driver behavior in mobility systems."
     papers:
       - ka2023routinggames

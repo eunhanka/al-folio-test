@@ -3,7 +3,7 @@ layout: page
 permalink: /cv/
 title: CV
 description: Download the full curriculum vitae as a PDF.
-nav: true
+nav: false
 nav_order: 5
 cv_pdf: CV_Eunhan.pdf
 ---

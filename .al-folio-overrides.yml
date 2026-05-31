@@ -6,12 +6,12 @@ overrides:
     gem_version: 1.0.9
     upstream_path: assets/css/main.scss
     upstream_sha256: 437c6c911c596391413e435dc0ea7095e682e85c572c1fd3fff69f9597455b3e
-    local_sha256: a39f8f45585c52a9b4ad7199ae731b0399eb2421fdfd0581b5c8c7653279b1d7
+    local_sha256: f134d7a350150db52d789520b42290998deb49e6c953bba5b628d8a264254699
     acknowledged_at: '2026-05-30'
   _layouts/bib.liquid:
     owner: al_folio_core
     gem_version: 1.0.9
     upstream_path: _layouts/bib.liquid
     upstream_sha256: ad78fd8be2f9862c6e8256f1cacff154470460ba24aa087bed4f78fd95587481
-    local_sha256: d20f032c7bd41abdb2bc683d1947b05cf41a89d2c3c39ab13c2a8a4ea9f581ff
+    local_sha256: 0f9aa39726479aaff6408aa90830dacc67d136d49abee3d27a03bd341bd8a493
     acknowledged_at: '2026-05-30'

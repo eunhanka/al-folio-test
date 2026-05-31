@@ -193,14 +193,25 @@
     {% endif %}
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
+    {%- comment -%}
+      Inline DOI: only when a doi field exists. Normalize so a doi value that
+      already includes a scheme/host does not get double-prefixed, then link
+      the whole "DOI: <id>" text to https://doi.org/<id>.
+    {%- endcomment -%}
+    {%- assign doi_id = entry.doi
+      | remove_first: 'https://doi.org/'
+      | remove_first: 'http://doi.org/'
+      | remove_first: 'https://dx.doi.org/'
+      | remove_first: 'doi.org/'
+      | remove_first: 'doi:'
+      | strip
+    -%}
     <div class="periodical">
-      {{ periodical | strip }}
+      {{ periodical | strip -}}
+      {%- if doi_id != '' -%}
+        . <a class="doi-inline" href="https://doi.org/{{ doi_id }}" target="_blank" rel="noopener noreferrer">DOI: {{ doi_id }}</a>
+      {%- endif %}
     </div>
-    {%- if entry.doi %}
-      <div class="periodical doi-line">
-        <a class="doi-inline" href="https://doi.org/{{ entry.doi }}">doi:{{ entry.doi }}</a>
-      </div>
-    {%- endif %}
     <div class="periodical">
       {{ entry.note | strip }}
     </div>

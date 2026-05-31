@@ -151,20 +151,16 @@
         color: var(--global-text-color);
       }
 
-      // (4) DOI on its own line, immediately under the venue/year line, so the
-      //     position is identical for every entry regardless of venue length.
-      .periodical.doi-line {
-        margin-top: 0.1rem;
+      // (4) DOI rendered inline after the venue and year, in the theme accent,
+      //     slightly smaller than the surrounding text.
+      .periodical a.doi-inline {
+        font-size: 0.9em;
+        color: var(--global-theme-color);
+        border-bottom: 0;
+        white-space: nowrap;
 
-        a.doi-inline {
-          font-size: 0.85rem;
-          color: var(--global-text-color-light);
-          border-bottom: 0;
-
-          &:hover {
-            color: var(--global-theme-color);
-            text-decoration: underline;
-          }
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

@@ -393,12 +393,12 @@
     <section class="eh-news" aria-label="Recent news">
       <h2 class="eh-section-title">News</h2>
       <ul class="eh-news-list">
-        {%- for item in eh_news limit: 5 -%}
+        {%- for item in eh_news limit: 7 -%}
           <li class="eh-news-item">
             <span class="eh-news-date">{{ item.date | date: '%b %Y' }}</span>
             <span class="eh-news-text">
               {%- if item.inline -%}
-                {{ item.content | strip_html | strip | truncate: 160 }}
+                {{ item.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}
               {%- else -%}
                 <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
               {%- endif -%}

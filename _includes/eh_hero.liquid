@@ -143,6 +143,46 @@
     color: var(--global-text-color-light);
     margin: 0.25rem 0 0;
   }
+  #eh-hero .eh-news {
+    margin: 2rem 0 0;
+  }
+  #eh-hero .eh-news-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #eh-hero .eh-news-item {
+    display: flex;
+    gap: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid var(--global-divider-color);
+    line-height: 1.5;
+  }
+  #eh-hero .eh-news-item:last-child {
+    border-bottom: 0;
+  }
+  #eh-hero .eh-news-date {
+    flex: 0 0 5.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--global-theme-color);
+    white-space: nowrap;
+  }
+  #eh-hero .eh-news-text {
+    color: var(--global-text-color);
+  }
+  #eh-hero .eh-news-text a {
+    color: var(--global-text-color);
+  }
+  #eh-hero .eh-news-text a:hover {
+    color: var(--global-theme-color);
+  }
+  @media (max-width: 576px) {
+    #eh-hero .eh-news-item {
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+  }
   #eh-hero .eh-foundation {
     display: flex;
     align-items: baseline;
@@ -204,7 +244,10 @@
     border: 0.5px solid var(--global-divider-color);
     border-radius: 8px;
     padding: 0.3rem 1.1rem;
-    min-height: 14rem;
+    /* Fixed to the tallest pillar (4 papers ~ 410px) so switching focus
+       between areas with different paper counts doesn't shift the layout.
+       Released on small screens where the panel stacks full-width. */
+    min-height: 26rem;
   }
   #eh-hero .eh-paper {
     display: block;
@@ -236,6 +279,11 @@
   @media (max-width: 768px) {
     #eh-hero .eh-focus {
       grid-template-columns: 1fr;
+    }
+    /* Stacked layout: the panel sits below the buttons, so a tall fixed
+       min-height would leave a large gap. Release it on small screens. */
+    #eh-hero .eh-papers {
+      min-height: 0;
     }
   }
   @media (max-width: 576px) {
@@ -339,6 +387,27 @@
     </div>
     <div class="eh-papers" id="eh-papers" aria-live="polite"></div>
   </div>
+
+  {%- assign eh_news = site.news | sort: 'date' | reverse -%}
+  {%- if eh_news != blank -%}
+    <section class="eh-news" aria-label="Recent news">
+      <h2 class="eh-section-title">News</h2>
+      <ul class="eh-news-list">
+        {%- for item in eh_news limit: 5 -%}
+          <li class="eh-news-item">
+            <span class="eh-news-date">{{ item.date | date: '%b %Y' }}</span>
+            <span class="eh-news-text">
+              {%- if item.inline -%}
+                {{ item.content | strip_html | strip | truncate: 160 }}
+              {%- else -%}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {%- endif -%}
+            </span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  {%- endif -%}
 </div>
 
 <script id="eh-research-data" type="application/json">

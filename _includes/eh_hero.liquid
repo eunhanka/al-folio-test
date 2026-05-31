@@ -5,6 +5,14 @@
 <style>
   #eh-hero {
     margin: 0 0 1.5rem;
+    /* Darken the theme's very-light muted text (#828282) within the hero so
+       secondary lines — title, vision quote, venues/years, dates, hints —
+       read clearly for all readers while still sitting a step below body
+       black. Scoped to the hero; light and dark each get a legible grey. */
+    --global-text-color-light: #595959;
+  }
+  html[data-theme='dark'] #eh-hero {
+    --global-text-color-light: #b9b9b9;
   }
   #eh-hero .eh-top {
     display: flex;
@@ -314,7 +322,7 @@
     <img class="eh-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Portrait of Eunhan Ka" width="180" height="232" loading="eager">
     <div class="eh-intro">
       <h1 class="eh-name">Eunhan Ka</h1>
-      <p class="eh-title">Postdoctoral Researcher · Purdue University</p>
+      <p class="eh-title"><strong>Postdoctoral Researcher</strong> · Purdue University</p>
       <div class="eh-rule"></div>
       <p class="eh-summary">
         I develop physics-informed and data-driven methods to model, estimate, and secure traffic dynamics across large-scale transportation networks.
@@ -338,15 +346,14 @@
   <div class="eh-bio">
     <p>
       I am a postdoctoral researcher in the Lyles School of Civil and Construction Engineering at Purdue University, where I completed my Ph.D. under
-      the supervision of Dr. Satish V. Ukkusuri. My dissertation,
-      <em>Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling</em>, develops methods at the intersection of traffic
-      flow theory, machine learning, and behavioral modeling.
+      Dr. Satish V. Ukkusuri. My dissertation,
+      <em>Physics-Informed Neural Networks for Secure Connected and Autonomous Traffic Modeling</em>, works at the intersection of traffic flow
+      theory, machine learning, and behavioral modeling.
     </p>
     <p>
       I study how transportation networks behave under disruption and adversarial manipulation — with emphasis on network resilience, transportation
       cybersecurity, and large-scale state estimation — and how reliable estimation and decision support can be maintained under uncertainty.
     </p>
-    <p>Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering from Seoul National University.</p>
   </div>
 
   <section class="eh-education" aria-label="Education">

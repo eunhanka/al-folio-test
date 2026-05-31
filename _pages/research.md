@@ -12,9 +12,7 @@ networks. The four directions below share a common foundation in network
 traffic dynamics and a common methodological core in physics-informed learning,
 optimization, game theory, and behavioral modeling.
 
-<div style="margin: 1.5rem 0;">
-  {% include figure.liquid path="assets/img/research-map.svg" class="img-fluid" zoomable=false %}
-</div>
+{% include eh_research_map.liquid %}
 
 ## Physics-informed AI
 

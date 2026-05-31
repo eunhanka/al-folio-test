@@ -1,0 +1,301 @@
+{%- comment -%}
+  Self-contained interactive research map for the Research page.
+  Top: common foundation node. Middle: four research pillars. Bottom: two
+  methodological cores. Hovering/focusing a pillar highlights it, its links to
+  the foundation and to its methods, and reveals a one-line description.
+  No external dependencies; light/dark via CSS variables; responsive.
+{%- endcomment -%}
+
+<div
+  id="eh-rmap"
+  role="group"
+  aria-label="Interactive map of the research program: a shared foundation in network traffic dynamics, four research areas, and two methodological cores"
+>
+  <div class="eh-rmap-stage">
+    <!-- Connection lines (SVG underlay). data-link marks which pillar each edge belongs to. -->
+    <svg class="eh-rmap-edges" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true">
+      <!-- foundation (500,70) to pillars -->
+      <path class="eh-edge" data-link="pinn" d="M500,70 C300,140 180,180 150,250" />
+      <path class="eh-edge" data-link="resilience" d="M500,70 C420,150 400,190 390,250" />
+      <path class="eh-edge" data-link="cyber" d="M500,70 C580,150 600,190 610,250" />
+      <path class="eh-edge" data-link="optim" d="M500,70 C700,140 820,180 850,250" />
+      <!-- pillars to methods: methods at (300,530) PIL and (700,530) GTO -->
+      <path class="eh-edge" data-link="pinn" data-method="pil" d="M150,330 C160,430 230,470 300,505" />
+      <path class="eh-edge" data-link="resilience" data-method="pil" d="M390,330 C360,420 330,470 320,505" />
+      <path class="eh-edge" data-link="cyber" data-method="gto" d="M610,330 C640,420 670,470 685,505" />
+      <path class="eh-edge" data-link="optim" data-method="gto" d="M850,330 C840,430 770,470 700,505" />
+    </svg>
+
+    <!-- Foundation -->
+    <div class="eh-rmap-row eh-rmap-foundation">
+      <div class="eh-node eh-node-foundation" aria-label="Common foundation: Network traffic dynamics">
+        <span class="eh-node-eyebrow">Common foundation</span>
+        <span class="eh-node-title">Network traffic dynamics</span>
+      </div>
+    </div>
+
+    <!-- Pillars -->
+    <div class="eh-rmap-row eh-rmap-pillars">
+      <button type="button" class="eh-node eh-node-pillar" data-k="pinn" aria-label="Physics-Informed AI">
+        <span class="eh-node-title">Physics-Informed AI</span>
+      </button>
+      <button type="button" class="eh-node eh-node-pillar" data-k="resilience" aria-label="Network Resilience">
+        <span class="eh-node-title">Network Resilience</span>
+      </button>
+      <button type="button" class="eh-node eh-node-pillar" data-k="cyber" aria-label="Transportation Cybersecurity">
+        <span class="eh-node-title">Transportation Cybersecurity</span>
+      </button>
+      <button type="button" class="eh-node eh-node-pillar" data-k="optim" aria-label="Optimization and Human Behavior">
+        <span class="eh-node-title">Optimization &amp; Human Behavior</span>
+      </button>
+    </div>
+
+    <!-- Methods -->
+    <div class="eh-rmap-row eh-rmap-methods">
+      <div class="eh-node eh-node-method" data-m="pil" aria-label="Methodological core: Physics-informed learning">
+        <span class="eh-node-eyebrow">Method</span>
+        <span class="eh-node-title">Physics-informed learning</span>
+      </div>
+      <div class="eh-node eh-node-method" data-m="gto" aria-label="Methodological core: Game theory and optimization">
+        <span class="eh-node-eyebrow">Method</span>
+        <span class="eh-node-title">Game theory and optimization</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Description reveal -->
+  <p
+    class="eh-rmap-desc"
+    id="eh-rmap-desc"
+    aria-live="polite"
+    data-default="Hover or focus a research area to see how it connects to the shared foundation and methods."
+  >
+    Hover or focus a research area to see how it connects to the shared foundation and methods.
+  </p>
+</div>
+
+<style>
+  #eh-rmap {
+    --rmap-line: var(--global-divider-color);
+    --rmap-line-strong: var(--global-theme-color);
+    --rmap-node-border: var(--global-divider-color);
+    margin: 1.5rem 0 2rem;
+  }
+  #eh-rmap .eh-rmap-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+  #eh-rmap .eh-rmap-edges {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  #eh-rmap .eh-edge {
+    fill: none;
+    stroke: var(--rmap-line);
+    stroke-width: 1.5;
+    opacity: 0.55;
+    transition:
+      stroke 0.25s ease,
+      stroke-width 0.25s ease,
+      opacity 0.25s ease;
+  }
+  #eh-rmap .eh-edge.is-active {
+    stroke: var(--rmap-line-strong);
+    stroke-width: 2.5;
+    opacity: 1;
+  }
+  #eh-rmap .eh-rmap-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #eh-rmap .eh-rmap-pillars {
+    gap: 0.9rem;
+  }
+  #eh-rmap .eh-rmap-methods {
+    justify-content: space-around;
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  #eh-rmap .eh-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.15rem;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--rmap-node-border);
+    border-radius: 10px;
+    background: var(--global-card-bg-color, var(--global-bg-color));
+    color: var(--global-text-color);
+    font: inherit;
+    line-height: 1.3;
+    transition:
+      border-color 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s ease;
+  }
+  #eh-rmap .eh-node-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+  }
+  #eh-rmap .eh-node-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  #eh-rmap .eh-node-foundation {
+    border-color: var(--global-theme-color);
+    min-width: 16rem;
+  }
+  #eh-rmap .eh-node-foundation .eh-node-title {
+    color: var(--global-theme-color);
+    font-size: 1.05rem;
+  }
+  #eh-rmap .eh-node-pillar {
+    flex: 1 1 0;
+    max-width: 14rem;
+    cursor: pointer;
+  }
+  #eh-rmap .eh-node-method {
+    min-width: 13rem;
+  }
+  /* Active / hover / focus emphasis on a pillar */
+  #eh-rmap .eh-node-pillar:hover,
+  #eh-rmap .eh-node-pillar:focus-visible,
+  #eh-rmap .eh-node-pillar.is-active {
+    border-color: var(--global-theme-color);
+    color: var(--global-theme-color);
+    box-shadow: 0 2px 10px rgba(30, 58, 138, 0.12);
+    transform: translateY(-2px);
+    outline: none;
+  }
+  /* Connected foundation + method nodes light up via JS-added class */
+  #eh-rmap .eh-node-foundation.is-active,
+  #eh-rmap .eh-node-method.is-active {
+    border-color: var(--global-theme-color);
+  }
+  #eh-rmap .eh-node-method.is-active .eh-node-title {
+    color: var(--global-theme-color);
+  }
+  #eh-rmap .eh-rmap-desc {
+    margin: 1.4rem auto 0;
+    max-width: 46rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--global-text-color-light);
+    min-height: 1.5em;
+    transition: opacity 0.2s ease;
+  }
+  #eh-rmap .eh-rmap-desc.is-pillar {
+    color: var(--global-text-color);
+  }
+
+  /* Responsive: stack pillars and methods on narrow screens; hide the
+     absolutely-positioned edges (they no longer line up once stacked). */
+  @media (max-width: 720px) {
+    #eh-rmap .eh-rmap-edges {
+      display: none;
+    }
+    #eh-rmap .eh-rmap-stage {
+      gap: 1.2rem;
+    }
+    #eh-rmap .eh-rmap-pillars,
+    #eh-rmap .eh-rmap-methods {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    #eh-rmap .eh-node-pillar {
+      max-width: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #eh-rmap .eh-edge,
+    #eh-rmap .eh-node,
+    #eh-rmap .eh-rmap-desc {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.getElementById('eh-rmap');
+    if (!root) return;
+    var desc = document.getElementById('eh-rmap-desc');
+    var defaultText = desc.getAttribute('data-default');
+
+    var DESCRIPTIONS = {
+      pinn: 'Physics-constrained learning for large-scale traffic state estimation',
+      resilience: 'How networks degrade and recover under disruption and adversarial manipulation',
+      cyber: 'Modeling and detecting attacks on connected and autonomous mobility',
+      optim: 'Routing games and behavioral models for network decisions',
+    };
+    // which method each pillar connects to
+    var PILLAR_METHOD = { pinn: 'pil', resilience: 'pil', cyber: 'gto', optim: 'gto' };
+
+    var pillars = root.querySelectorAll('.eh-node-pillar');
+    var edges = root.querySelectorAll('.eh-edge');
+    var foundation = root.querySelector('.eh-node-foundation');
+    var methods = root.querySelectorAll('.eh-node-method');
+
+    function clear() {
+      pillars.forEach(function (p) {
+        p.classList.remove('is-active');
+      });
+      edges.forEach(function (e) {
+        e.classList.remove('is-active');
+      });
+      methods.forEach(function (m) {
+        m.classList.remove('is-active');
+      });
+      foundation.classList.remove('is-active');
+      desc.textContent = defaultText;
+      desc.classList.remove('is-pillar');
+    }
+
+    function activate(key) {
+      clear();
+      var pillar = root.querySelector('.eh-node-pillar[data-k="' + key + '"]');
+      if (pillar) pillar.classList.add('is-active');
+      foundation.classList.add('is-active');
+      var method = PILLAR_METHOD[key];
+      edges.forEach(function (e) {
+        if (e.getAttribute('data-link') === key) e.classList.add('is-active');
+      });
+      methods.forEach(function (m) {
+        if (m.getAttribute('data-m') === method) m.classList.add('is-active');
+      });
+      if (DESCRIPTIONS[key]) {
+        desc.textContent = DESCRIPTIONS[key];
+        desc.classList.add('is-pillar');
+      }
+    }
+
+    pillars.forEach(function (p) {
+      var key = p.dataset.k;
+      p.addEventListener('mouseenter', function () {
+        activate(key);
+      });
+      p.addEventListener('focus', function () {
+        activate(key);
+      });
+      p.addEventListener('mouseleave', clear);
+      p.addEventListener('blur', clear);
+    });
+  })();
+</script>

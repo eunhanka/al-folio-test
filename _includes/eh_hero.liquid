@@ -380,7 +380,7 @@
           role="tab"
           aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
         >
-          <i class="ti {{ p.icon }}" aria-hidden="true"></i>
+          <i class="{{ p.icon }}" aria-hidden="true"></i>
           <span class="eh-kt">{{ p.name }}</span>
         </button>
       {%- endfor -%}

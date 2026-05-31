@@ -1,0 +1,118 @@
+{%- comment -%}
+  Conceptual research-area figures for the Research page. One simple, original
+  SVG per pillar, selected by include.id (pinn | resilience | cybersecurity |
+  optimization).
+  Concept illustrations only (no real data). Theme-aware: strokes/fills use
+  currentColor and the wrapper sets color to the navy theme variable, with a
+  muted grey for secondary marks; background transparent so light and dark
+  both work. Uniform 320x160 viewBox.
+{%- endcomment -%}
+<div class="eh-fig" aria-hidden="false">
+  {%- case include.id -%}
+    {%- when 'pinn' -%}
+      <svg
+        viewBox="0 0 320 160"
+        class="eh-fig-svg"
+        role="img"
+        aria-label="Concept: smooth traffic-flow curve fused with a small neural network of nodes"
+      >
+        <!-- smooth traffic-flow curve (theory) -->
+        <path d="M12,120 C70,40 120,40 165,90 S250,150 308,70" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.85"/>
+        <path d="M295,66 l13,4 -8,11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+        <!-- small neural network of nodes (learning), overlapping the curve -->
+        <g class="eh-fig-muted" stroke="currentColor" stroke-width="1.4" opacity="0.7">
+          <line x1="120" y1="55" x2="180" y2="40"/>
+          <line x1="120" y1="55" x2="180" y2="95"/>
+          <line x1="120" y1="110" x2="180" y2="40"/>
+          <line x1="120" y1="110" x2="180" y2="95"/>
+          <line x1="180" y1="40" x2="240" y2="68"/>
+          <line x1="180" y1="95" x2="240" y2="68"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="120" cy="55" r="6"/><circle cx="120" cy="110" r="6"/>
+          <circle cx="180" cy="40" r="6"/><circle cx="180" cy="95" r="6"/>
+          <circle cx="240" cy="68" r="6"/>
+        </g>
+      </svg>
+    {%- when 'resilience' -%}
+      <svg
+        viewBox="0 0 320 160"
+        class="eh-fig-svg"
+        role="img"
+        aria-label="Concept: a network with one broken link and a highlighted alternative path"
+      >
+        <!-- base network edges (muted) -->
+        <g class="eh-fig-muted" stroke="currentColor" stroke-width="1.6" opacity="0.6" fill="none">
+          <line x1="40" y1="120" x2="120" y2="120"/>
+          <line x1="200" y1="120" x2="280" y2="120"/>
+          <line x1="120" y1="120" x2="200" y2="120"/>
+        </g>
+        <!-- broken link (dashed) on the direct route -->
+        <line x1="120" y1="120" x2="200" y2="120" stroke="currentColor" stroke-width="2" stroke-dasharray="5 6" opacity="0.55"/>
+        <line x1="150" y1="108" x2="170" y2="132" stroke="currentColor" stroke-width="2" opacity="0.55"/>
+        <line x1="170" y1="108" x2="150" y2="132" stroke="currentColor" stroke-width="2" opacity="0.55"/>
+        <!-- highlighted alternative path (reroute) -->
+        <path d="M120,120 C140,40 180,40 200,120" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M192,104 l9,16 -17,2" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- nodes -->
+        <g fill="currentColor">
+          <circle cx="40" cy="120" r="7"/><circle cx="120" cy="120" r="7"/>
+          <circle cx="200" cy="120" r="7"/><circle cx="280" cy="120" r="7"/>
+        </g>
+      </svg>
+    {%- when 'cybersecurity' -%}
+      <svg
+        viewBox="0 0 320 160"
+        class="eh-fig-svg"
+        role="img"
+        aria-label="Concept: two vehicles exchanging V2X signals protected by a shield, with one spoofed signal flagged"
+      >
+        <!-- two vehicles -->
+        <g fill="currentColor">
+          <rect x="36" y="104" width="56" height="26" rx="6"/>
+          <rect x="228" y="104" width="56" height="26" rx="6"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-width="2" opacity="0.85">
+          <circle cx="52" cy="134" r="6"/><circle cx="76" cy="134" r="6"/>
+          <circle cx="244" cy="134" r="6"/><circle cx="268" cy="134" r="6"/>
+        </g>
+        <!-- V2X signal arcs (legit) -->
+        <g fill="none" stroke="currentColor" stroke-width="2" opacity="0.7">
+          <path d="M104,96 a30,30 0 0 1 26,-22"/>
+          <path d="M112,104 a44,44 0 0 1 40,-34"/>
+        </g>
+        <!-- spoofed signal arc with warning mark -->
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="4 5" opacity="0.6">
+          <path d="M216,96 a30,30 0 0 0 -26,-22"/>
+        </g>
+        <g class="eh-fig-muted" stroke="currentColor" fill="none" stroke-width="1.6" opacity="0.7">
+          <path d="M188,52 l8,14 -16,0 z"/>
+        </g>
+        <line x1="188" y1="58" x2="188" y2="62" stroke="currentColor" stroke-width="1.6"/>
+        <!-- shield (defense) at center -->
+        <path d="M160,40 l20,7 0,20 c0,16 -12,24 -20,28 c-8,-4 -20,-12 -20,-28 l0,-20 z"
+              fill="none" stroke="currentColor" stroke-width="3"/>
+        <path d="M150,72 l7,8 14,-15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    {%- when 'optimization' -%}
+      <svg
+        viewBox="0 0 320 160"
+        class="eh-fig-svg"
+        role="img"
+        aria-label="Concept: two alternative routes between an origin and a destination, with one route chosen"
+      >
+        <!-- origin and destination -->
+        <g fill="currentColor">
+          <circle cx="36" cy="80" r="9"/>
+          <circle cx="284" cy="80" r="9"/>
+        </g>
+        <!-- alternative route (not chosen, muted dashed) -->
+        <path d="M36,80 C110,150 210,150 284,80" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="5 6" class="eh-fig-muted" opacity="0.55"/>
+        <!-- chosen route (highlighted) -->
+        <path d="M36,80 C110,16 210,16 284,80" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+        <path d="M276,66 l10,14 -16,3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- split/decision point -->
+        <circle cx="36" cy="80" r="16" fill="none" stroke="currentColor" stroke-width="1.6" class="eh-fig-muted" opacity="0.6"/>
+      </svg>
+  {%- endcase -%}
+</div>

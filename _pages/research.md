@@ -21,7 +21,10 @@ optimization, game theory, and behavioral modeling.
         <i class="{{ p.icon }} eh-area-icon" aria-hidden="true"></i>
         <h2 class="eh-area-name">{{ p.name }}</h2>
       </div>
-      <p class="eh-area-blurb">{{ p.blurb }}</p>
+      <div class="eh-area-intro">
+        <p class="eh-area-desc">{{ p.description | default: p.blurb }}</p>
+        {% include eh_research_figure.liquid id=p.id %}
+      </div>
       <div class="eh-area-papers">
         {%- for key in p.papers -%}
           {% bibliography --query @*[key={{ key }}] %}
@@ -36,13 +39,13 @@ optimization, game theory, and behavioral modeling.
     margin: 2rem 0 0;
   }
   .eh-areas .eh-area {
-    margin: 0 0 2.4rem;
+    margin: 0 0 2.6rem;
   }
   .eh-areas .eh-area-head {
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    margin: 0 0 0.4rem;
+    margin: 0 0 0.6rem;
     padding-bottom: 0.3rem;
     border-bottom: 2px solid var(--global-theme-color);
   }
@@ -57,18 +60,79 @@ optimization, game theory, and behavioral modeling.
     margin: 0;
     color: var(--global-text-color);
   }
-  .eh-areas .eh-area-blurb {
-    color: var(--global-text-color-light);
-    margin: 0 0 0.8rem;
+  /* Header intro: description text beside the conceptual figure on desktop,
+     stacked on mobile. */
+  .eh-areas .eh-area-intro {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0 0 1rem;
   }
-  /* The per-paper {% raw %}{% bibliography %}{% endraw %} blocks reuse the
-     publications bib.liquid styling; tighten the spacing between the stacked
-     single-entry lists so a pillar reads as one list. */
+  .eh-areas .eh-area-desc {
+    flex: 1 1 auto;
+    margin: 0;
+    line-height: 1.6;
+    color: var(--global-text-color);
+  }
+  /* Conceptual figure: theme-aware (navy via color), transparent background,
+     uniform size, never overflowing its column. */
+  .eh-areas .eh-fig {
+    flex: 0 0 auto;
+    width: 320px;
+    max-width: 100%;
+    color: var(--global-theme-color);
+  }
+  .eh-areas .eh-fig-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .eh-areas .eh-fig .eh-fig-muted {
+    color: var(--global-text-color-light);
+  }
+  @media (max-width: 768px) {
+    .eh-areas .eh-area-intro {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .eh-areas .eh-fig {
+      width: 100%;
+      max-width: 320px;
+      align-self: center;
+    }
+  }
+
+  /* Papers reuse the publications bib.liquid styling. Each paper is rendered by
+     its own single-entry {% raw %}{% bibliography %}{% endraw %} call, so:
+     (a) hide the left venue-abbreviation column and let the body span full
+         width (same effect as the publications page), and
+     (b) number entries sequentially per pillar with a CSS counter on the
+         container (each entry's own <ol> would otherwise restart at 1). */
+  .eh-areas .eh-area-papers {
+    counter-reset: eh-paper;
+  }
   .eh-areas .eh-area-papers ol.bibliography {
     margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
   }
   .eh-areas .eh-area-papers ol.bibliography li {
+    counter-increment: eh-paper;
     margin-bottom: 1rem;
+    list-style: none;
+  }
+  .eh-areas .eh-area-papers ol.bibliography li .abbr {
+    display: none;
+  }
+  .eh-areas .eh-area-papers ol.bibliography li > .row > [class*="col-sm-8"],
+  .eh-areas .eh-area-papers ol.bibliography li > .row > [class*="col-sm-10"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .eh-areas .eh-area-papers ol.bibliography li .title::before {
+    content: counter(eh-paper) ". ";
+    font-weight: 600;
+    margin-right: 0.15em;
   }
 </style>
 
@@ -109,7 +173,7 @@ optimization, game theory, and behavioral modeling.
     <ul class="eh-fund-list">
       <li class="eh-fund-item">
         <span class="eh-fund-title">Google Cloud Research Credits</span>
-        <span class="eh-fund-meta">Google Cloud (computing grant) &middot; 2025</span>
+        <span class="eh-fund-meta">Google Cloud (computing grant) &middot; $1,000 &middot; 2025</span>
       </li>
     </ul>
   </div>

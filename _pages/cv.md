@@ -14,7 +14,7 @@ filename and commit — the site picks it up automatically. The ?v=
 build-time query busts browser/CDN caches so visitors always get the
 latest file even though the name never changes.
 {%- endcomment -%}
-{%- assign cv_file = '/assets/pdf/CV_Eunhan.pdf' | relative_url -%}
+{%- assign cv_file = site.cv_pdf_path | relative_url -%}
 {%- assign cv_ver = site.time | date: '%s' -%}
 {%- assign cv_url = cv_file | append: '?v=' | append: cv_ver -%}
 

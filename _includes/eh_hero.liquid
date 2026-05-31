@@ -92,6 +92,14 @@
   #eh-hero .eh-links a:hover i {
     color: var(--global-theme-color);
   }
+  /* CV is a text label rather than a glyph; size it so its visual weight sits
+     with the 1.5rem icons, share their muted colour, and turn navy on hover.
+     Inherits the row's flex centering, so it stays vertically aligned. */
+  #eh-hero .eh-links a.eh-cv {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
   #eh-hero .eh-bio {
     margin: 2.2rem 0 0;
   }
@@ -317,6 +325,15 @@
   }
 </style>
 
+{%- comment -%}
+  CV PDF link: same single source as _pages/cv.md (site.cv_pdf_path) with a
+  build-time ?v= cache-buster. Timestamp kept in its own variable so the date
+  filter applies to site.time, not the whole appended string.
+{%- endcomment -%}
+{%- assign cv_pdf = site.cv_pdf_path | relative_url -%}
+{%- assign cv_pdf_ver = site.time | date: '%s' -%}
+{%- assign cv_pdf_url = cv_pdf | append: '?v=' | append: cv_pdf_ver -%}
+
 <div id="eh-hero">
   <div class="eh-top">
     <img class="eh-photo" src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Portrait of Eunhan Ka" width="180" height="232" loading="eager">
@@ -342,7 +359,7 @@
         <a href="https://orcid.org/0000-0003-0954-8075" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"
           ><i class="ai ai-orcid" aria-hidden="true"></i
         ></a>
-        <a href="{{ '/cv/' | relative_url }}" title="CV" aria-label="CV"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
+        <a class="eh-cv" href="{{ cv_pdf_url }}" target="_blank" rel="noopener noreferrer" title="CV (PDF)" aria-label="CV">CV</a>
       </div>
     </div>
   </div>

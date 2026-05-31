@@ -85,7 +85,7 @@
     color: var(--global-theme-color);
   }
   #eh-hero .eh-bio {
-    margin: 1.6rem 0 0;
+    margin: 2.2rem 0 0;
   }
   #eh-hero .eh-bio p {
     font-size: 1.08rem;
@@ -94,7 +94,10 @@
     margin: 0 0 1rem;
   }
   #eh-hero .eh-education {
-    margin: 1.8rem 0 0;
+    margin: 2.2rem 0 0;
+  }
+  #eh-hero .eh-research {
+    margin: 2.2rem 0 0;
   }
   #eh-hero .eh-section-title {
     font-size: 1.2rem;
@@ -144,7 +147,7 @@
     margin: 0.25rem 0 0;
   }
   #eh-hero .eh-news {
-    margin: 2rem 0 0;
+    margin: 2.2rem 0 0;
   }
   #eh-hero .eh-news-list {
     list-style: none;
@@ -188,7 +191,7 @@
     align-items: baseline;
     justify-content: space-between;
     gap: 1rem;
-    margin: 1.8rem 0 0.9rem;
+    margin: 0 0 0.9rem;
   }
   #eh-hero .eh-foundation-intro {
     font-size: 1rem;
@@ -340,10 +343,8 @@
       flow theory, machine learning, and behavioral modeling.
     </p>
     <p>
-      My work develops physics-informed and data-driven methods to model, estimate, and secure network traffic dynamics in connected and autonomous
-      mobility, with emphasis on network resilience, transportation cybersecurity, and large-scale state estimation. I study how transportation
-      networks behave under disruption and adversarial manipulation, and how reliable estimation and decision support can be maintained under
-      uncertainty.
+      I study how transportation networks behave under disruption and adversarial manipulation — with emphasis on network resilience, transportation
+      cybersecurity, and large-scale state estimation — and how reliable estimation and decision support can be maintained under uncertainty.
     </p>
     <p>Before Purdue, I earned my B.S. and M.S. in Civil and Environmental Engineering from Seoul National University.</p>
   </div>
@@ -366,27 +367,30 @@
     </ul>
   </section>
 
-  <div class="eh-foundation">
-    <p class="eh-foundation-intro">Four focus areas, built on a shared foundation in {{ site.data.research.common_foundation | downcase }}.</p>
-    <span class="eh-foundation-hint">hover a focus area</span>
-  </div>
-
-  <div class="eh-focus">
-    <div class="eh-pillars" role="tablist" aria-label="Research focus areas">
-      {%- for p in site.data.research.pillars -%}
-        <button
-          class="eh-kw{% if forloop.first %} active{% endif %}"
-          data-k="{{ p.id }}"
-          role="tab"
-          aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-        >
-          <i class="{{ p.icon }}" aria-hidden="true"></i>
-          <span class="eh-kt">{{ p.name }}</span>
-        </button>
-      {%- endfor -%}
+  <section class="eh-research" aria-label="Research focus areas">
+    <h2 class="eh-section-title">Research</h2>
+    <div class="eh-foundation">
+      <p class="eh-foundation-intro">Four focus areas, built on a shared foundation in {{ site.data.research.common_foundation | downcase }}.</p>
+      <span class="eh-foundation-hint">hover a focus area</span>
     </div>
-    <div class="eh-papers" id="eh-papers" aria-live="polite"></div>
-  </div>
+
+    <div class="eh-focus">
+      <div class="eh-pillars" role="tablist" aria-label="Research focus areas">
+        {%- for p in site.data.research.pillars -%}
+          <button
+            class="eh-kw{% if forloop.first %} active{% endif %}"
+            data-k="{{ p.id }}"
+            role="tab"
+            aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+          >
+            <i class="{{ p.icon }}" aria-hidden="true"></i>
+            <span class="eh-kt">{{ p.name }}</span>
+          </button>
+        {%- endfor -%}
+      </div>
+      <div class="eh-papers" id="eh-papers" aria-live="polite"></div>
+    </div>
+  </section>
 
   {%- assign eh_news = site.news | sort: 'date' | reverse -%}
   {%- if eh_news != blank -%}

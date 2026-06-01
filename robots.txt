@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://eunhanka.github.io/al-folio-test/sitemap.xml
+Sitemap: https://eunhanka.github.io/sitemap.xml
